@@ -6,6 +6,7 @@
 #include "Logger.h"
 #include "AuthManager.h"
 #include "DataCalculator.h"
+#include "ErrorHandler.h"  // Добавляем
 
 class Server {
 private:
@@ -13,7 +14,8 @@ private:
     std::string user_db_file;
     std::string log_file;
     
-    std::unique_ptr<Logger> logger;
+    std::shared_ptr<Logger> logger;  // Меняем на shared_ptr
+    std::shared_ptr<ErrorHandler> error_handler;  // Объявляем член
     AuthManager auth_manager;
     int server_socket;
     bool running;

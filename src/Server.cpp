@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <csignal>
+#include <stdexcept>
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -12,7 +13,14 @@ Server::Server(int port, const std::string& user_db_file, const std::string& log
     : port(port), user_db_file(user_db_file), log_file(log_file),
       server_socket(-1), running(false) {
     
-    logger = std::make_unique<Logger>(log_file);
+    try {
+        logger = std::make_shared<Logger>(log_file);  // Теперь shared_ptr
+        error_handler = std::make_shared<ErrorHandler>(logger);
+        logger->log("Server initialized successfully");
+    } catch (const std::exception& e) {
+        std::cerr << "FATAL: Failed to initialize server: " << e.what() << std::endl;
+        throw;
+    }
 }
 
 Server::~Server() {
@@ -20,57 +28,86 @@ Server::~Server() {
 }
 
 std::string Server::get_client_ip(int client_sock) {
-    struct sockaddr_in addr;
-    socklen_t addr_len = sizeof(addr);
-    getpeername(client_sock, reinterpret_cast<struct sockaddr*>(&addr), &addr_len);
-    
-    char ip_str[INET_ADDRSTRLEN];
-    inet_ntop(AF_INET, &addr.sin_addr, ip_str, sizeof(ip_str));
-    return std::string(ip_str);
+    try {
+        struct sockaddr_in addr;
+        socklen_t addr_len = sizeof(addr);
+        if (getpeername(client_sock, reinterpret_cast<struct sockaddr*>(&addr), &addr_len) < 0) {
+            throw std::runtime_error("getpeername failed");
+        }
+        
+        char ip_str[INET_ADDRSTRLEN];
+        if (!inet_ntop(AF_INET, &addr.sin_addr, ip_str, sizeof(ip_str))) {
+            throw std::runtime_error("inet_ntop failed");
+        }
+        
+        return std::string(ip_str);
+    } catch (const std::exception& e) {
+        error_handler->handle_exception(e, "get_client_ip");
+        return "unknown";
+    }
 }
 
 bool Server::send_string(int sock, const std::string& str) {
-    return send(sock, str.c_str(), str.length(), 0) == static_cast<ssize_t>(str.length());
+    try {
+        ssize_t sent = send(sock, str.c_str(), str.length(), 0);
+        if (sent != static_cast<ssize_t>(str.length())) {
+            throw std::runtime_error("send failed, sent " + std::to_string(sent) + 
+                                   " bytes instead of " + std::to_string(str.length()));
+        }
+        return true;
+    } catch (const std::exception& e) {
+        error_handler->handle_exception(e, "send_string");
+        return false;
+    }
 }
 
 bool Server::recv_string(int sock, std::string& str, size_t max_len) {
-    std::vector<char> buffer(max_len + 1);
-    
-    ssize_t received = recv(sock, buffer.data(), max_len, 0);
-    if (received <= 0) {
-        return false; 
+    try {
+        std::vector<char> buffer(max_len + 1);
+        
+        ssize_t received = recv(sock, buffer.data(), max_len, 0);
+        if (received <= 0) {
+            if (received == 0) {
+                throw std::runtime_error("connection closed by client");
+            } else {
+                throw std::runtime_error("recv failed with error");
+            }
+        }
+        
+        buffer[received] = '\0';
+        str = std::string(buffer.data());
+        return true;
+    } catch (const std::exception& e) {
+        error_handler->handle_exception(e, "recv_string");
+        return false;
     }
-    
-    buffer[received] = '\0';
-    str = std::string(buffer.data());
-    return true;
 }
 
 bool Server::handle_client(int client_sock) {
-    std::string client_ip = get_client_ip(client_sock);
-    logger->log_connection(client_ip, true);
+    std::string client_ip = "unknown";
     
     try {
+        client_ip = get_client_ip(client_sock);
+        logger->log_connection(client_ip, true);
+        
         std::string login;
         if (!recv_string(client_sock, login)) {
-            logger->log_error("No login from " + client_ip);
-            close(client_sock);
-            return false;
+            throw std::runtime_error("Failed to receive login");
+        }
+        
+        if (login.empty()) {
+            throw std::runtime_error("Empty login received");
         }
         
         std::string salt = auth_manager.generate_salt();
         
         if (!send_string(client_sock, salt)) {
-            logger->log_error("Failed to send salt to " + client_ip);
-            close(client_sock);
-            return false;
+            throw std::runtime_error("Failed to send salt");
         }
         
         std::string client_hash;
         if (!recv_string(client_sock, client_hash)) {
-            logger->log_error("No hash from " + client_ip);
-            close(client_sock);
-            return false;
+            throw std::runtime_error("Failed to receive hash");
         }
         
         bool auth_success = auth_manager.authenticate(
@@ -79,9 +116,7 @@ bool Server::handle_client(int client_sock) {
         
         if (auth_success) {
             if (!send_string(client_sock, "OK")) {
-                logger->log_error("Failed to send OK to " + client_ip);
-                close(client_sock);
-                return false;
+                throw std::runtime_error("Failed to send OK");
             }
             
             if (!DataCalculator::process_client_data(client_sock, *logger, client_ip)) {
@@ -94,82 +129,118 @@ bool Server::handle_client(int client_sock) {
         }
         
     } catch (const std::exception& e) {
-        logger->log_error(std::string("Exception handling client: ") + e.what());
-    } catch (...) {
-        logger->log_error("Unknown error handling client");
+        error_handler->handle_exception(e, "handle_client for " + client_ip);
+        
+        try {
+            if (!send_string(client_sock, "ERR")) {
+                logger->log_error("Failed to send error response");
+            }
+        } catch (...) {
+            // Игнорируем ошибки при отправке ошибки
+        }
     }
     
-    close(client_sock);
-    logger->log_connection(client_ip, false);
-    return true;
-}
-bool Server::start() {
-    logger->log("Starting server on port " + std::to_string(port));
-    
-    if (!auth_manager.load_users(user_db_file)) {
-        logger->log_error("Failed to load user database");
-        return false;
+    try {
+        if (client_sock >= 0) {
+            close(client_sock);
+        }
+        if (client_ip != "unknown") {
+            logger->log_connection(client_ip, false);
+        }
+    } catch (const std::exception& e) {
+        error_handler->handle_exception(e, "cleanup after client");
     }
     
-    server_socket = socket(AF_INET, SOCK_STREAM, 0);
-    if (server_socket < 0) {
-        logger->log_error("Failed to create socket");
-        return false;
-    }
-    
-    int opt = 1;
-    setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
-    
-    struct sockaddr_in server_addr;
-    memset(&server_addr, 0, sizeof(server_addr));
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_addr.s_addr = INADDR_ANY;
-    server_addr.sin_port = htons(port);
-    
-    if (bind(server_socket, reinterpret_cast<struct sockaddr*>(&server_addr), sizeof(server_addr)) < 0) {
-        logger->log_error("Failed to bind socket");
-        close(server_socket);
-        return false;
-    }
-    
-    if (listen(server_socket, 10) < 0) {
-        logger->log_error("Failed to listen");
-        close(server_socket);
-        return false;
-    }
-    
-    running = true;
-    logger->log("Server started successfully");
     return true;
 }
 
-void Server::stop() {
-    running = false;
-    if (server_socket >= 0) {
-        close(server_socket);
-        server_socket = -1;
+bool Server::start() {
+    try {
+        logger->log("Starting server on port " + std::to_string(port));
+        
+        if (!auth_manager.load_users(user_db_file)) {
+            throw std::runtime_error("Failed to load user database: " + user_db_file);
+        }
+        
+        server_socket = socket(AF_INET, SOCK_STREAM, 0);
+        if (server_socket < 0) {
+            throw std::runtime_error("Failed to create socket");
+        }
+        
+        int opt = 1;
+        if (setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+            throw std::runtime_error("Failed to set socket options");
+        }
+        
+        struct sockaddr_in server_addr;
+        memset(&server_addr, 0, sizeof(server_addr));
+        server_addr.sin_family = AF_INET;
+        server_addr.sin_addr.s_addr = INADDR_ANY;
+        server_addr.sin_port = htons(port);
+        
+        if (bind(server_socket, reinterpret_cast<struct sockaddr*>(&server_addr), sizeof(server_addr)) < 0) {
+            throw std::runtime_error("Failed to bind socket to port " + std::to_string(port));
+        }
+        
+        if (listen(server_socket, 10) < 0) {
+            throw std::runtime_error("Failed to listen on socket");
+        }
+        
+        running = true;
+        logger->log("Server started successfully on port " + std::to_string(port));
+        return true;
+        
+    } catch (const std::exception& e) {
+        error_handler->handle_critical_error(e.what());
+        return false;
     }
-    logger->log("Server stopped");
+}
+
+void Server::stop() {
+    if (!running) {
+        return; // Уже остановлен
+    }
+    
+    running = false;
+    try {
+        if (server_socket >= 0) {
+            close(server_socket);
+            server_socket = -1;
+        }
+        // Не логируем здесь, логирование будет в деструкторе Logger
+    } catch (const std::exception& e) {
+        if (logger) {
+            logger->log_error("Error in Server::stop: " + std::string(e.what()));
+        }
+    }
 }
 
 void Server::run() {
     logger->log("Waiting for connections...");
     
     while (running) {
-        struct sockaddr_in client_addr;
-        socklen_t client_len = sizeof(client_addr);
-        
-        int client_sock = accept(server_socket, 
-                                reinterpret_cast<struct sockaddr*>(&client_addr), 
-                                &client_len);
-        
-        if (client_sock < 0) {
-            if (running) {
-                logger->log_error("Accept failed");
+        try {
+            struct sockaddr_in client_addr;
+            socklen_t client_len = sizeof(client_addr);
+            
+            int client_sock = accept(server_socket, 
+                                    reinterpret_cast<struct sockaddr*>(&client_addr), 
+                                    &client_len);
+            
+            if (client_sock < 0) {
+                if (running) {
+                    error_handler->handle_network_error("accept", errno);
+                }
+                continue;
             }
-            continue;
+            
+            handle_client(client_sock);
+            
+        } catch (const std::exception& e) {
+            error_handler->handle_exception(e, "Server::run loop");
+            
+            // Даем серверу шанс восстановиться после ошибки
+            sleep(1);
         }
-        
-        handle_client(client_sock);
     }
 }
