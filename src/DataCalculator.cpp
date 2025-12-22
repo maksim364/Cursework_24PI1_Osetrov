@@ -1,3 +1,11 @@
+/*! \file DataCalculator.cpp
+ *  \brief Реализация класса DataCalculator
+ *  \details Содержит реализацию методов обработки клиентских данных и их передачу
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "DataCalculator.h"
 #include "Logger.h"
 #include <iostream>
@@ -6,7 +14,7 @@
 #include <limits>
 #include <vector>
 #include <stdexcept>
-#include <cmath>  // Добавляем этот заголовок для std::isinf, std::isnan
+#include <cmath>  
 
 #include <sys/socket.h>
 #include <arpa/inet.h>

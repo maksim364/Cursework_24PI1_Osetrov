@@ -1,3 +1,11 @@
+/*! \file Logger.cpp
+ *  \brief Реализация класса Logger
+ *  \details Содержит реализацию методов логирования работы сервера
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "Logger.h"
 #include <iostream>
 #include <ctime>

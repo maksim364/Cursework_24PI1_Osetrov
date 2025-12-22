@@ -1,3 +1,11 @@
+/*! \file CommandLineParser.cpp
+ *  \brief Реализация класса CommandLineParser
+ *  \details Содержит реализацию методов парсинга командной строки
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "CommandLineParser.h"
 #include <iostream>
 #include <fstream>  

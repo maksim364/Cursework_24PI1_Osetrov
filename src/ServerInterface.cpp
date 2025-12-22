@@ -1,3 +1,10 @@
+/*! \file ServerInterface.cpp
+ *  \brief Реализация класса ServerInterface
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "ServerInterface.h"
 #include "CommandLineParser.h"
 #include "Server.h"
@@ -17,7 +24,6 @@ namespace {
         signal_received = signal;
         std::cout << "\nПолучен сигнал " << signal << ", завершаем работу..." << std::endl;
         
-        // Не логируем через error_handler, чтобы избежать дублирования
         if (global_logger) {
             global_logger->log("Received signal " + std::to_string(signal) + ", shutting down...");
         }
@@ -37,11 +43,11 @@ int ServerInterface::run(int argc, char* argv[]) {
         
         CommandLineParser parser;
         if (!parser.parse(argc, argv)) {
-            return 0; // Корректный выход при --help
+            return 0; 
         }
         
         if (!parser.validate()) {
-            return 1; // Ошибка валидации
+            return 1; 
         }
         
         std::cout << "Порт: " << parser.get_port() << std::endl;
@@ -49,12 +55,10 @@ int ServerInterface::run(int argc, char* argv[]) {
         std::cout << "Файл лога: " << parser.get_log_file() << std::endl;
         std::cout << "========================================" << std::endl;
         
-        // Установка обработчиков сигналов
         std::signal(SIGINT, signal_handler);
         std::signal(SIGTERM, signal_handler);
-        std::signal(SIGPIPE, SIG_IGN); // Игнорируем SIGPIPE
+        std::signal(SIGPIPE, SIG_IGN); 
         
-        // Создаем логгер для глобальной обработки ошибок
         try {
             global_logger = std::make_shared<Logger>(parser.get_log_file());
             global_error_handler = std::make_shared<ErrorHandler>(global_logger);
@@ -83,7 +87,7 @@ int ServerInterface::run(int argc, char* argv[]) {
         try {
             server_instance->run();
         } catch (const std::exception& e) {
-            if (!signal_received) { // Не логируем если это сигнал
+            if (!signal_received) { 
                 global_error_handler->handle_critical_error("Server runtime error: " + 
                                                            std::string(e.what()));
             }

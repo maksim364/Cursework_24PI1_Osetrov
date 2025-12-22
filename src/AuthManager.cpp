@@ -1,3 +1,11 @@
+/*! \file AuthManager.cpp
+ *  \brief Реализация класса AuthManager
+ *  \details Содержит реализацию методов аутентификации, работы с солью и хеш-функциями
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "AuthManager.h"
 #include "Logger.h"
 #include <iostream>

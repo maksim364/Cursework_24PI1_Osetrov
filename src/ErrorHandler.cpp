@@ -1,3 +1,11 @@
+/*! \file ErrorHandler.cpp
+ *  \brief Реализация класса ErrorHandler
+ *  \details Содержит реализацию методов обработки ошибок
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "ErrorHandler.h"
 #include "Logger.h"
 #include <iostream>

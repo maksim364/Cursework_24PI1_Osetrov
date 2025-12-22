@@ -1,8 +1,16 @@
+/*! \file Server.cpp
+ *  \brief Реализация класса Server
+ *  \author Осетров М.С.
+ *  \date 2025
+ *  \copyright ПГУ
+ */
+
 #include "Server.h"
 #include <iostream>
 #include <cstring>
 #include <csignal>
 #include <stdexcept>
+#include <vector>
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -14,7 +22,7 @@ Server::Server(int port, const std::string& user_db_file, const std::string& log
       server_socket(-1), running(false) {
     
     try {
-        logger = std::make_shared<Logger>(log_file);  // Теперь shared_ptr
+        logger = std::make_shared<Logger>(log_file); 
         error_handler = std::make_shared<ErrorHandler>(logger);
         logger->log("Server initialized successfully");
     } catch (const std::exception& e) {
@@ -136,7 +144,6 @@ bool Server::handle_client(int client_sock) {
                 logger->log_error("Failed to send error response");
             }
         } catch (...) {
-            // Игнорируем ошибки при отправке ошибки
         }
     }
     
@@ -198,7 +205,7 @@ bool Server::start() {
 
 void Server::stop() {
     if (!running) {
-        return; // Уже остановлен
+        return; 
     }
     
     running = false;
@@ -207,7 +214,7 @@ void Server::stop() {
             close(server_socket);
             server_socket = -1;
         }
-        // Не логируем здесь, логирование будет в деструкторе Logger
+
     } catch (const std::exception& e) {
         if (logger) {
             logger->log_error("Error in Server::stop: " + std::string(e.what()));
@@ -239,7 +246,7 @@ void Server::run() {
         } catch (const std::exception& e) {
             error_handler->handle_exception(e, "Server::run loop");
             
-            // Даем серверу шанс восстановиться после ошибки
+
             sleep(1);
         }
     }
