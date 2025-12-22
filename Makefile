@@ -72,11 +72,6 @@ test-data:
 	@echo "user3:" >> $(TEST_BUILD_DIR)/data/test_users_invalid.txt
 	@echo "Тестовые данные созданы!"
 
-# Запуск тестов с валгриндом (для поиска утечек памяти)
-test-valgrind: test-build test-data
-	@echo "Запуск тестов с Valgrind..."
-	@cd $(TEST_BUILD_DIR) && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./run_tests
-
 # Быстрые тесты (без подготовки данных)
 test-quick: $(TEST_TARGET)
 	@echo "Быстрый запуск тестов..."
@@ -100,11 +95,6 @@ clean:
 
 clean-tests:
 	rm -rf $(TEST_BUILD_DIR)
-	@echo "Тестовые файлы удалены"
-
-run: all
-	@echo "Запуск сервера..."
-	cd $(BUILD_DIR) && ./server
 
 debug: CXXFLAGS += -g -O0
 debug: all
@@ -113,12 +103,5 @@ debug: all
 help: all
 	cd $(BUILD_DIR) && ./server --help
 	
-show-stats:
-	@if [ -f $(TEST_BUILD_DIR)/run_tests ]; then \
-		echo "📊 Результаты тестов:"; \
-		cd $(TEST_BUILD_DIR) && ./run_tests -s 2>&1 ; \
-	else \
-		echo "Сначала выполни: make test"; \
-	fi
 
-.PHONY: all prepare clean clean-tests run debug help test test-build test-data test-valgrind test-quick test-suite show-stats
+.PHONY: all prepare clean clean-tests debug help test test-build test-data test-quick test-suite 
