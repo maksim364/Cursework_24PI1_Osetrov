@@ -1,6 +1,6 @@
 #include "CommandLineParser.h"
 #include <iostream>
-#include <fstream>  // Добавляем этот заголовочный файл
+#include <fstream>  
 #include <filesystem>
 #include <stdexcept>
 
@@ -34,7 +34,7 @@ bool CommandLineParser::parse(int argc, char* argv[]) {
         }
         
         // Валидация значений
-        if (port <= 0 || port > 65535) {
+        if (port <= 1023 || port > 65535) {
             throw std::runtime_error("Invalid port number: " + std::to_string(port));
         }
         

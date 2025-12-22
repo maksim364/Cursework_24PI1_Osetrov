@@ -8,17 +8,16 @@
 #include <unistd.h>
 
 bool AuthManager::load_users(const std::string& filename) {
-    try {
-        std::ifstream file(filename);
-        if (!file.is_open()) {
-            throw std::runtime_error("Cannot open user database: " + filename);
-        }
-        
-        std::string line;
-        int count = 0;
-        
-        while (std::getline(file, line)) {
-            try {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        throw std::runtime_error("Cannot open user database: " + filename);
+    }
+    
+    std::string line;
+    int count = 0;
+    
+    while (std::getline(file, line)) {
+        try {
                 size_t start = line.find_first_not_of(" \t");
                 if (start == std::string::npos) continue;
                 
@@ -58,21 +57,15 @@ bool AuthManager::load_users(const std::string& filename) {
                 continue;
             }
         }
-        
-        file.close();
-        if (count == 0) {
-            throw std::runtime_error("No valid users found in database");
-        }
-        
-        std::cout << "INFO: Loaded " << count << " users from database" << std::endl;
-        return true;
-        
-    } catch (const std::exception& e) {
-        std::cerr << "ERROR: " << e.what() << std::endl;
-        return false;
+    
+    file.close();
+    if (count == 0) {
+        throw std::runtime_error("No valid users found in database");
     }
+    
+    std::cout << "INFO: Loaded " << count << " users from database" << std::endl;
+    return true;
 }
-
 bool AuthManager::user_exists(const std::string& login) {
     return users.find(login) != users.end();
 }

@@ -12,11 +12,10 @@ std::string Logger::get_current_time() {
 
 Logger::Logger(const std::string& filename) {
     log_file.open(filename, std::ios::app);
-    if (log_file.is_open()) {
-        log("=== Server started ===");
-    } else {
-        std::cerr << "ERROR: Cannot open log file: " << filename << std::endl;
+    if (!log_file.is_open()) {
+        throw std::runtime_error("Cannot open log file: " + filename);
     }
+    log("=== Server started ===");
 }
 
 Logger::~Logger() {
