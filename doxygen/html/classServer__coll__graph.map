@@ -1,0 +1,5 @@
+<map id="Server" name="Server">
+<area shape="rect" id="Node000001" title="Основной класс сервера" alt="" coords="28,93,92,119"/>
+<area shape="rect" id="Node000002" href="$classAuthManager.html" title="Класс для управления аутентификацией пользователей" alt="" coords="5,5,115,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,45,63,93,57,93,57,45"/>
+</map>

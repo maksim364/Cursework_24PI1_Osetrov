@@ -1,0 +1,49 @@
+\doxysection{Server.\+h}
+\hypertarget{Server_8h_source}{}\label{Server_8h_source}\index{src/Server.h@{src/Server.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Logger.h"{}}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}AuthManager.h"{}}\ \ \ \ \ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}DataCalculator.h"{}}\ \ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}ErrorHandler.h"{}}\ \ \ \ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServer}{Server}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classServer_a926c9dae229a62b6d33fdbb41dca6d82}{port}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classServer_a6dfc5d68ac482c49a34c3e2c5a50d8f4}{user\_db\_file}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classServer_a15950052beb63396b2bc778c13777d8c}{log\_file}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ std::shared\_ptr<class\ Logger>\ \mbox{\hyperlink{classServer_a57beb9fd0b69c48a60ff2865905edee2}{logger}};\ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ std::shared\_ptr<class\ ErrorHandler>\ \mbox{\hyperlink{classServer_af77a2afcad670c4197d33f0bdc17cbe0}{error\_handler}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAuthManager}{AuthManager}}\ \mbox{\hyperlink{classServer_afa2c6bc8cd3df9ef02624f5ba22efff7}{auth\_manager}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classServer_a597fe0c56c29950a94d078d362fed51a}{server\_socket}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_a4db32e1a16e0423cf619d7914fa9b8c2}{running}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{classServer_af2fc938a98f52921c960edff26ea41df}{get\_client\_ip}}(\textcolor{keywordtype}{int}\ client\_sock);}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_a3b269fbcd91534eaa0fd2c7a37e3eebb}{send\_string}}(\textcolor{keywordtype}{int}\ sock,\ \textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_ab6ee706b5de80785eaea02acd525b611}{recv\_string}}(\textcolor{keywordtype}{int}\ sock,\ std::string\&\ str,\ \textcolor{keywordtype}{size\_t}\ max\_len\ =\ 1024);}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_adf699c64408ac0fe3217499f6139d2e8}{handle\_client}}(\textcolor{keywordtype}{int}\ client\_sock);}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classServer}{Server}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classServer_a926c9dae229a62b6d33fdbb41dca6d82}{port}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classServer_a6dfc5d68ac482c49a34c3e2c5a50d8f4}{user\_db\_file}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classServer_a15950052beb63396b2bc778c13777d8c}{log\_file}});}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\string~Server}}();}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classServer_acec935535d1d5b58d95cf24678eac014}{start}}();}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}{stop}}();}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_abb27d30b40a94326e3fd629d3b30b7d5}{run}}();}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERVER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Сервер обработки данных: Класс Logger</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Сервер обработки данных<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classLogger-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс Logger</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для логирования событий сервера  
+ <a href="classLogger.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Logger_8h_source.html">Logger.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a4f2ee02db1d03a83b6b9b43808e09f15" id="r_a4f2ee02db1d03a83b6b9b43808e09f15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a4f2ee02db1d03a83b6b9b43808e09f15">Logger</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a4f2ee02db1d03a83b6b9b43808e09f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор логгера  <br /></td></tr>
+<tr class="separator:a4f2ee02db1d03a83b6b9b43808e09f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb668a9e186a25fbaad2e4af6d1ed00a" id="r_acb668a9e186a25fbaad2e4af6d1ed00a"><td class="memItemLeft" align="right" valign="top"><a id="acb668a9e186a25fbaad2e4af6d1ed00a" name="acb668a9e186a25fbaad2e4af6d1ed00a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Logger</b> ()</td></tr>
+<tr class="memdesc:acb668a9e186a25fbaad2e4af6d1ed00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор логгера <br /></td></tr>
+<tr class="separator:acb668a9e186a25fbaad2e4af6d1ed00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5bd3aa615eb67a5a49c02d8040812db" id="r_af5bd3aa615eb67a5a49c02d8040812db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#af5bd3aa615eb67a5a49c02d8040812db">log</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:af5bd3aa615eb67a5a49c02d8040812db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записать общее сообщение  <br /></td></tr>
+<tr class="separator:af5bd3aa615eb67a5a49c02d8040812db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade1d9d24e999b8c6bbb506a1cdba50ec" id="r_ade1d9d24e999b8c6bbb506a1cdba50ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#ade1d9d24e999b8c6bbb506a1cdba50ec">log_auth</a> (const std::string &amp;ip, const std::string &amp;login, bool success, const std::string &amp;details=&quot;&quot;)</td></tr>
+<tr class="memdesc:ade1d9d24e999b8c6bbb506a1cdba50ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записать событие аутентификации  <br /></td></tr>
+<tr class="separator:ade1d9d24e999b8c6bbb506a1cdba50ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5dd5f84b2cbc738e9fb01610ba539d" id="r_a5f5dd5f84b2cbc738e9fb01610ba539d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a5f5dd5f84b2cbc738e9fb01610ba539d">log_connection</a> (const std::string &amp;ip, bool connected)</td></tr>
+<tr class="memdesc:a5f5dd5f84b2cbc738e9fb01610ba539d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записать событие подключения/отключения  <br /></td></tr>
+<tr class="separator:a5f5dd5f84b2cbc738e9fb01610ba539d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6980ca625f295fd1f1c0a392ace7224" id="r_ab6980ca625f295fd1f1c0a392ace7224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#ab6980ca625f295fd1f1c0a392ace7224">log_data</a> (const std::string &amp;ip, const std::string &amp;operation)</td></tr>
+<tr class="memdesc:ab6980ca625f295fd1f1c0a392ace7224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записать событие обработки данных  <br /></td></tr>
+<tr class="separator:ab6980ca625f295fd1f1c0a392ace7224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1deee8fa8f21c2ab7d25fb9fb4cb1f1c" id="r_a1deee8fa8f21c2ab7d25fb9fb4cb1f1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a1deee8fa8f21c2ab7d25fb9fb4cb1f1c">log_error</a> (const std::string &amp;error)</td></tr>
+<tr class="memdesc:a1deee8fa8f21c2ab7d25fb9fb4cb1f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записать сообщение об ошибке  <br /></td></tr>
+<tr class="separator:a1deee8fa8f21c2ab7d25fb9fb4cb1f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7b17aab0368fc9d835cde3003ee52a" id="r_afa7b17aab0368fc9d835cde3003ee52a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#afa7b17aab0368fc9d835cde3003ee52a">log_debug</a> (const std::string &amp;msg)</td></tr>
+<tr class="memdesc:afa7b17aab0368fc9d835cde3003ee52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записать отладочное сообщение  <br /></td></tr>
+<tr class="separator:afa7b17aab0368fc9d835cde3003ee52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:aaff42813783601ee85e141e68893af96" id="r_aaff42813783601ee85e141e68893af96"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#aaff42813783601ee85e141e68893af96">get_current_time</a> ()</td></tr>
+<tr class="memdesc:aaff42813783601ee85e141e68893af96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получить текущее время в формате строки  <br /></td></tr>
+<tr class="separator:aaff42813783601ee85e141e68893af96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a040bd1e498724fbecef2fee3d529ce9e" id="r_a040bd1e498724fbecef2fee3d529ce9e"><td class="memItemLeft" align="right" valign="top"><a id="a040bd1e498724fbecef2fee3d529ce9e" name="a040bd1e498724fbecef2fee3d529ce9e"></a>
+std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><b>log_file</b></td></tr>
+<tr class="memdesc:a040bd1e498724fbecef2fee3d529ce9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Файл журнала <br /></td></tr>
+<tr class="separator:a040bd1e498724fbecef2fee3d529ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для логирования событий сервера </p>
+<p>Записывает логи в файл и выводит в консоль </p><dl class="section author"><dt>Автор</dt><dd>Осетров М.С. </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025 </dd></dl>
+<dl class="section copyright"><dt>Авторство</dt><dd>ПГУ </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a4f2ee02db1d03a83b6b9b43808e09f15" name="a4f2ee02db1d03a83b6b9b43808e09f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f2ee02db1d03a83b6b9b43808e09f15">&#9670;&#160;</a></span>Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор логгера </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Имя файла журнала </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>При ошибке открытия файла </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aaff42813783601ee85e141e68893af96" name="aaff42813783601ee85e141e68893af96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff42813783601ee85e141e68893af96">&#9670;&#160;</a></span>get_current_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Logger::get_current_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получить текущее время в формате строки </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строка с текущим временем </dd></dl>
+
+</div>
+</div>
+<a id="af5bd3aa615eb67a5a49c02d8040812db" name="af5bd3aa615eb67a5a49c02d8040812db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5bd3aa615eb67a5a49c02d8040812db">&#9670;&#160;</a></span>log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::log </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записать общее сообщение </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Сообщение для записи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade1d9d24e999b8c6bbb506a1cdba50ec" name="ade1d9d24e999b8c6bbb506a1cdba50ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade1d9d24e999b8c6bbb506a1cdba50ec">&#9670;&#160;</a></span>log_auth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::log_auth </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>success</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>details</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записать событие аутентификации </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>IP адрес клиента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">login</td><td>Логин пользователя </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">success</td><td>Результат аутентификации </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">details</td><td>Детали аутентификации (по умолчанию пустая строка) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f5dd5f84b2cbc738e9fb01610ba539d" name="a5f5dd5f84b2cbc738e9fb01610ba539d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5dd5f84b2cbc738e9fb01610ba539d">&#9670;&#160;</a></span>log_connection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::log_connection </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>connected</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записать событие подключения/отключения </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>IP адрес клиента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>Флаг подключения (true) или отключения (false) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab6980ca625f295fd1f1c0a392ace7224" name="ab6980ca625f295fd1f1c0a392ace7224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6980ca625f295fd1f1c0a392ace7224">&#9670;&#160;</a></span>log_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::log_data </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>operation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записать событие обработки данных </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>IP адрес клиента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">operation</td><td>Операция с данными </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afa7b17aab0368fc9d835cde3003ee52a" name="afa7b17aab0368fc9d835cde3003ee52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7b17aab0368fc9d835cde3003ee52a">&#9670;&#160;</a></span>log_debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::log_debug </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записать отладочное сообщение </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>Текст отладочного сообщения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1deee8fa8f21c2ab7d25fb9fb4cb1f1c" name="a1deee8fa8f21c2ab7d25fb9fb4cb1f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1deee8fa8f21c2ab7d25fb9fb4cb1f1c">&#9670;&#160;</a></span>log_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Logger::log_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Записать сообщение об ошибке </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">error</td><td>Текст ошибки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="Logger_8h_source.html">Logger.h</a></li>
+<li>src/<a class="el" href="Logger_8cpp.html">Logger.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

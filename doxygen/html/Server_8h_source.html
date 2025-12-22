@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Сервер обработки данных: Исходный файл src/Server.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Сервер обработки данных<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Server.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SERVER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SERVER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Logger.h&quot;</span>          </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;AuthManager.h&quot;</span>     </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;DataCalculator.h&quot;</span>  </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;ErrorHandler.h&quot;</span>    </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classServer.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classServer.html">Server</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classServer.html#a926c9dae229a62b6d33fdbb41dca6d82">   18</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classServer.html#a926c9dae229a62b6d33fdbb41dca6d82">port</a>;                           </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classServer.html#a6dfc5d68ac482c49a34c3e2c5a50d8f4">   19</a></span>    std::string <a class="code hl_variable" href="classServer.html#a6dfc5d68ac482c49a34c3e2c5a50d8f4">user_db_file</a>;          </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classServer.html#a15950052beb63396b2bc778c13777d8c">   20</a></span>    std::string <a class="code hl_variable" href="classServer.html#a15950052beb63396b2bc778c13777d8c">log_file</a>;              </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classServer.html#a57beb9fd0b69c48a60ff2865905edee2">   22</a></span>    std::shared_ptr&lt;class Logger&gt; <a class="code hl_variable" href="classServer.html#a57beb9fd0b69c48a60ff2865905edee2">logger</a>;      </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classServer.html#af77a2afcad670c4197d33f0bdc17cbe0">   23</a></span>    std::shared_ptr&lt;class ErrorHandler&gt; <a class="code hl_variable" href="classServer.html#af77a2afcad670c4197d33f0bdc17cbe0">error_handler</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classServer.html#afa2c6bc8cd3df9ef02624f5ba22efff7">   24</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classAuthManager.html">AuthManager</a> <a class="code hl_variable" href="classServer.html#afa2c6bc8cd3df9ef02624f5ba22efff7">auth_manager</a>;            </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classServer.html#a597fe0c56c29950a94d078d362fed51a">   25</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classServer.html#a597fe0c56c29950a94d078d362fed51a">server_socket</a>;                        </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classServer.html#a4db32e1a16e0423cf619d7914fa9b8c2">   26</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classServer.html#a4db32e1a16e0423cf619d7914fa9b8c2">running</a>;                            </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::string <a class="code hl_function" href="classServer.html#af2fc938a98f52921c960edff26ea41df">get_client_ip</a>(<span class="keywordtype">int</span> client_sock);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classServer.html#a3b269fbcd91534eaa0fd2c7a37e3eebb">send_string</a>(<span class="keywordtype">int</span> sock, <span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classServer.html#ab6ee706b5de80785eaea02acd525b611">recv_string</a>(<span class="keywordtype">int</span> sock, std::string&amp; str, <span class="keywordtype">size_t</span> max_len = 1024);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classServer.html#adf699c64408ac0fe3217499f6139d2e8">handle_client</a>(<span class="keywordtype">int</span> client_sock);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="classServer.html">Server</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="classServer.html#a926c9dae229a62b6d33fdbb41dca6d82">port</a>, <span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="classServer.html#a6dfc5d68ac482c49a34c3e2c5a50d8f4">user_db_file</a>, <span class="keyword">const</span> std::string&amp; <a class="code hl_variable" href="classServer.html#a15950052beb63396b2bc778c13777d8c">log_file</a>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classServer.html#acec935535d1d5b58d95cf24678eac014">start</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">stop</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#abb27d30b40a94326e3fd629d3b30b7d5">run</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif </span><span class="comment">// SERVER_H</span></div>
+<div class="ttc" id="aclassAuthManager_html"><div class="ttname"><a href="classAuthManager.html">AuthManager</a></div><div class="ttdoc">Класс для управления аутентификацией пользователей</div><div class="ttdef"><b>Definition</b> AuthManager.h:21</div></div>
+<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdoc">Основной класс сервера</div><div class="ttdef"><b>Definition</b> Server.h:16</div></div>
+<div class="ttc" id="aclassServer_html_a07c45a7e101a3926d8f9685c3c5d14e4"><div class="ttname"><a href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">Server::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Остановить сервер</div><div class="ttdef"><b>Definition</b> Server.cpp:206</div></div>
+<div class="ttc" id="aclassServer_html_a15950052beb63396b2bc778c13777d8c"><div class="ttname"><a href="classServer.html#a15950052beb63396b2bc778c13777d8c">Server::log_file</a></div><div class="ttdeci">std::string log_file</div><div class="ttdoc">Файл журнала</div><div class="ttdef"><b>Definition</b> Server.h:20</div></div>
+<div class="ttc" id="aclassServer_html_a3b269fbcd91534eaa0fd2c7a37e3eebb"><div class="ttname"><a href="classServer.html#a3b269fbcd91534eaa0fd2c7a37e3eebb">Server::send_string</a></div><div class="ttdeci">bool send_string(int sock, const std::string &amp;str)</div><div class="ttdoc">Отправить строку клиенту</div><div class="ttdef"><b>Definition</b> Server.cpp:58</div></div>
+<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdoc">Деструктор сервера</div><div class="ttdef"><b>Definition</b> Server.cpp:34</div></div>
+<div class="ttc" id="aclassServer_html_a4db32e1a16e0423cf619d7914fa9b8c2"><div class="ttname"><a href="classServer.html#a4db32e1a16e0423cf619d7914fa9b8c2">Server::running</a></div><div class="ttdeci">bool running</div><div class="ttdoc">Флаг работы сервера</div><div class="ttdef"><b>Definition</b> Server.h:26</div></div>
+<div class="ttc" id="aclassServer_html_a57beb9fd0b69c48a60ff2865905edee2"><div class="ttname"><a href="classServer.html#a57beb9fd0b69c48a60ff2865905edee2">Server::logger</a></div><div class="ttdeci">std::shared_ptr&lt; class Logger &gt; logger</div><div class="ttdoc">Логгер</div><div class="ttdef"><b>Definition</b> Server.h:22</div></div>
+<div class="ttc" id="aclassServer_html_a597fe0c56c29950a94d078d362fed51a"><div class="ttname"><a href="classServer.html#a597fe0c56c29950a94d078d362fed51a">Server::server_socket</a></div><div class="ttdeci">int server_socket</div><div class="ttdoc">Сокет сервера</div><div class="ttdef"><b>Definition</b> Server.h:25</div></div>
+<div class="ttc" id="aclassServer_html_a6dfc5d68ac482c49a34c3e2c5a50d8f4"><div class="ttname"><a href="classServer.html#a6dfc5d68ac482c49a34c3e2c5a50d8f4">Server::user_db_file</a></div><div class="ttdeci">std::string user_db_file</div><div class="ttdoc">Файл базы пользователей</div><div class="ttdef"><b>Definition</b> Server.h:19</div></div>
+<div class="ttc" id="aclassServer_html_a926c9dae229a62b6d33fdbb41dca6d82"><div class="ttname"><a href="classServer.html#a926c9dae229a62b6d33fdbb41dca6d82">Server::port</a></div><div class="ttdeci">int port</div><div class="ttdoc">Порт сервера</div><div class="ttdef"><b>Definition</b> Server.h:18</div></div>
+<div class="ttc" id="aclassServer_html_ab6ee706b5de80785eaea02acd525b611"><div class="ttname"><a href="classServer.html#ab6ee706b5de80785eaea02acd525b611">Server::recv_string</a></div><div class="ttdeci">bool recv_string(int sock, std::string &amp;str, size_t max_len=1024)</div><div class="ttdoc">Принять строку от клиента</div><div class="ttdef"><b>Definition</b> Server.cpp:72</div></div>
+<div class="ttc" id="aclassServer_html_abb27d30b40a94326e3fd629d3b30b7d5"><div class="ttname"><a href="classServer.html#abb27d30b40a94326e3fd629d3b30b7d5">Server::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Основной цикл работы сервера</div><div class="ttdef"><b>Definition</b> Server.cpp:225</div></div>
+<div class="ttc" id="aclassServer_html_acec935535d1d5b58d95cf24678eac014"><div class="ttname"><a href="classServer.html#acec935535d1d5b58d95cf24678eac014">Server::start</a></div><div class="ttdeci">bool start()</div><div class="ttdoc">Запустить сервер</div><div class="ttdef"><b>Definition</b> Server.cpp:164</div></div>
+<div class="ttc" id="aclassServer_html_adf699c64408ac0fe3217499f6139d2e8"><div class="ttname"><a href="classServer.html#adf699c64408ac0fe3217499f6139d2e8">Server::handle_client</a></div><div class="ttdeci">bool handle_client(int client_sock)</div><div class="ttdoc">Обработать подключение клиента</div><div class="ttdef"><b>Definition</b> Server.cpp:94</div></div>
+<div class="ttc" id="aclassServer_html_af2fc938a98f52921c960edff26ea41df"><div class="ttname"><a href="classServer.html#af2fc938a98f52921c960edff26ea41df">Server::get_client_ip</a></div><div class="ttdeci">std::string get_client_ip(int client_sock)</div><div class="ttdoc">Получить IP адрес клиента</div><div class="ttdef"><b>Definition</b> Server.cpp:38</div></div>
+<div class="ttc" id="aclassServer_html_af77a2afcad670c4197d33f0bdc17cbe0"><div class="ttname"><a href="classServer.html#af77a2afcad670c4197d33f0bdc17cbe0">Server::error_handler</a></div><div class="ttdeci">std::shared_ptr&lt; class ErrorHandler &gt; error_handler</div><div class="ttdoc">Обработчик ошибок</div><div class="ttdef"><b>Definition</b> Server.h:23</div></div>
+<div class="ttc" id="aclassServer_html_afa2c6bc8cd3df9ef02624f5ba22efff7"><div class="ttname"><a href="classServer.html#afa2c6bc8cd3df9ef02624f5ba22efff7">Server::auth_manager</a></div><div class="ttdeci">class AuthManager auth_manager</div><div class="ttdoc">Менеджер аутентификации</div><div class="ttdef"><b>Definition</b> Server.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

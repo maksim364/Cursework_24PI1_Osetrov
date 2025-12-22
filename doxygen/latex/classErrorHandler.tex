@@ -1,0 +1,208 @@
+\doxysection{Класс Error\+Handler}
+\hypertarget{classErrorHandler}{}\label{classErrorHandler}\index{ErrorHandler@{ErrorHandler}}
+
+
+Класс для обработки ошибок сервера  
+
+
+
+
+{\ttfamily \#include $<$Error\+Handler.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classErrorHandler_aade37277df7a3075baacaaab2b1ee7b3}{Error\+Handler}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLogger}{Logger}} $>$ \mbox{\hyperlink{classErrorHandler_aa4095750740911f0fc234280d395e418}{logger}})
+\begin{DoxyCompactList}\small\item\em Конструктор обработчика ошибок \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_a493e36e0d65d830ce19f1717b3c678e7}{handle\+\_\+network\+\_\+error}} (const std\+::string \&context, int error\+\_\+code=0)
+\begin{DoxyCompactList}\small\item\em Обработать сетевую ошибку \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_a8abe5c32e4de70790b585e80a9b51c5a}{handle\+\_\+auth\+\_\+error}} (const std\+::string \&client\+\_\+ip, const std\+::string \&login, const std\+::string \&reason)
+\begin{DoxyCompactList}\small\item\em Обработать ошибку аутентификации \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_a4ca6201db2d933fce4f3287d0aa6a50d}{handle\+\_\+calculation\+\_\+error}} (const std\+::string \&client\+\_\+ip, const std\+::string \&operation)
+\begin{DoxyCompactList}\small\item\em Обработать ошибку вычислений \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_a269e3bc3430bef5a323a4c56884d78b1}{handle\+\_\+io\+\_\+error}} (const std\+::string \&filename, const std\+::string \&operation)
+\begin{DoxyCompactList}\small\item\em Обработать I/O ошибку \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_a39bf3031229beacc84b4cbb0c5696b59}{handle\+\_\+exception}} (const std\+::exception \&e, const std\+::string \&context)
+\begin{DoxyCompactList}\small\item\em Обработать исключение \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_acafa1db95c1fa0ffabcb545f48165e62}{handle\+\_\+critical\+\_\+error}} (const std\+::string \&error\+\_\+message)
+\begin{DoxyCompactList}\small\item\em Обработать критическую ошибку \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classErrorHandler_a704c84d2d5363f0d5965ee78d2a0699e}{handle\+\_\+error}} (const std\+::string \&error\+\_\+type, const std\+::string \&message, bool is\+\_\+critical=false)
+\begin{DoxyCompactList}\small\item\em Общий метод обработки ошибок \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classErrorHandler_aa4095750740911f0fc234280d395e418}\label{classErrorHandler_aa4095750740911f0fc234280d395e418} 
+std\+::shared\+\_\+ptr$<$ class \mbox{\hyperlink{classLogger}{Logger}} $>$ {\bfseries logger}
+\begin{DoxyCompactList}\small\item\em Логгер для записи ошибок \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для обработки ошибок сервера 
+
+Обрабатывает различные типы ошибок\+: сетевые, аутентификации, вычислений, I/O \begin{DoxyAuthor}{Автор}
+Осетров М.\+С. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ПГУ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classErrorHandler_aade37277df7a3075baacaaab2b1ee7b3}\label{classErrorHandler_aade37277df7a3075baacaaab2b1ee7b3} 
+\index{ErrorHandler@{ErrorHandler}!ErrorHandler@{ErrorHandler}}
+\index{ErrorHandler@{ErrorHandler}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{ErrorHandler()}{ErrorHandler()}}
+{\footnotesize\ttfamily Error\+Handler\+::\+Error\+Handler (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classLogger}{Logger}} $>$}]{logger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор обработчика ошибок 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em logger} & Общий логгер для записи ошибок \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classErrorHandler_a8abe5c32e4de70790b585e80a9b51c5a}\label{classErrorHandler_a8abe5c32e4de70790b585e80a9b51c5a} 
+\index{ErrorHandler@{ErrorHandler}!handle\_auth\_error@{handle\_auth\_error}}
+\index{handle\_auth\_error@{handle\_auth\_error}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_auth\_error()}{handle\_auth\_error()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+auth\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{client\+\_\+ip,  }\item[{const std\+::string \&}]{login,  }\item[{const std\+::string \&}]{reason }\end{DoxyParamCaption})}
+
+
+
+Обработать ошибку аутентификации 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em client\+\_\+ip} & IP клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em login} & Логин пользователя \\
+\hline
+\mbox{\texttt{ in}}  & {\em reason} & Причина ошибки \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classErrorHandler_a4ca6201db2d933fce4f3287d0aa6a50d}\label{classErrorHandler_a4ca6201db2d933fce4f3287d0aa6a50d} 
+\index{ErrorHandler@{ErrorHandler}!handle\_calculation\_error@{handle\_calculation\_error}}
+\index{handle\_calculation\_error@{handle\_calculation\_error}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_calculation\_error()}{handle\_calculation\_error()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+calculation\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{client\+\_\+ip,  }\item[{const std\+::string \&}]{operation }\end{DoxyParamCaption})}
+
+
+
+Обработать ошибку вычислений 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em client\+\_\+ip} & IP клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em operation} & Операция, вызвавшая ошибку \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classErrorHandler_acafa1db95c1fa0ffabcb545f48165e62}\label{classErrorHandler_acafa1db95c1fa0ffabcb545f48165e62} 
+\index{ErrorHandler@{ErrorHandler}!handle\_critical\_error@{handle\_critical\_error}}
+\index{handle\_critical\_error@{handle\_critical\_error}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_critical\_error()}{handle\_critical\_error()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+critical\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+\_\+message }\end{DoxyParamCaption})}
+
+
+
+Обработать критическую ошибку 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em error\+\_\+message} & Сообщение об ошибке \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Всегда выбрасывает исключение \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classErrorHandler_a704c84d2d5363f0d5965ee78d2a0699e}\label{classErrorHandler_a704c84d2d5363f0d5965ee78d2a0699e} 
+\index{ErrorHandler@{ErrorHandler}!handle\_error@{handle\_error}}
+\index{handle\_error@{handle\_error}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_error()}{handle\_error()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error\+\_\+type,  }\item[{const std\+::string \&}]{message,  }\item[{bool}]{is\+\_\+critical = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Общий метод обработки ошибок 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em error\+\_\+type} & Тип ошибки \\
+\hline
+\mbox{\texttt{ in}}  & {\em message} & Сообщение об ошибке \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+\_\+critical} & Флаг критичности ошибки (по умолчанию false) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & Если is\+\_\+critical == true \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classErrorHandler_a39bf3031229beacc84b4cbb0c5696b59}\label{classErrorHandler_a39bf3031229beacc84b4cbb0c5696b59} 
+\index{ErrorHandler@{ErrorHandler}!handle\_exception@{handle\_exception}}
+\index{handle\_exception@{handle\_exception}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_exception()}{handle\_exception()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+exception (\begin{DoxyParamCaption}\item[{const std\+::exception \&}]{e,  }\item[{const std\+::string \&}]{context }\end{DoxyParamCaption})}
+
+
+
+Обработать исключение 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em e} & Исключение \\
+\hline
+\mbox{\texttt{ in}}  & {\em context} & Контекст, где произошло исключение \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classErrorHandler_a269e3bc3430bef5a323a4c56884d78b1}\label{classErrorHandler_a269e3bc3430bef5a323a4c56884d78b1} 
+\index{ErrorHandler@{ErrorHandler}!handle\_io\_error@{handle\_io\_error}}
+\index{handle\_io\_error@{handle\_io\_error}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_io\_error()}{handle\_io\_error()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+io\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const std\+::string \&}]{operation }\end{DoxyParamCaption})}
+
+
+
+Обработать I/O ошибку 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em filename} & Имя файла \\
+\hline
+\mbox{\texttt{ in}}  & {\em operation} & Операция (чтение/запись) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classErrorHandler_a493e36e0d65d830ce19f1717b3c678e7}\label{classErrorHandler_a493e36e0d65d830ce19f1717b3c678e7} 
+\index{ErrorHandler@{ErrorHandler}!handle\_network\_error@{handle\_network\_error}}
+\index{handle\_network\_error@{handle\_network\_error}!ErrorHandler@{ErrorHandler}}
+\doxysubsubsection{\texorpdfstring{handle\_network\_error()}{handle\_network\_error()}}
+{\footnotesize\ttfamily void Error\+Handler\+::handle\+\_\+network\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{context,  }\item[{int}]{error\+\_\+code = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Обработать сетевую ошибку 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em context} & Контекст ошибки \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+code} & Код ошибки (0 для использования errno) \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/Error\+Handler.\+h\item 
+src/\mbox{\hyperlink{ErrorHandler_8cpp}{Error\+Handler.\+cpp}}\end{DoxyCompactItemize}

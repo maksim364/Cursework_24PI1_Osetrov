@@ -1,0 +1,33 @@
+\doxysection{Command\+Line\+Parser.\+h}
+\hypertarget{CommandLineParser_8h_source}{}\label{CommandLineParser_8h_source}\index{src/CommandLineParser.h@{src/CommandLineParser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMMANDLINEPARSER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMMANDLINEPARSER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <boost/program\_options.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCommandLineParser}{CommandLineParser}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCommandLineParser_a82b311ecb8ca6c639c92a14009a4b95d}{port}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommandLineParser_a1298fb5808dc16ff26d32072764f470b}{user\_db\_file}};\ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommandLineParser_a862cf8d4a7dd27cc4fc3f34d0e3e3a2c}{log\_file}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classCommandLineParser_a9bbf0d70950652b7944f12f0564014ac}{CommandLineParser}}();}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCommandLineParser_a7d350b3f4481bf7e2595b4b737c9909a}{parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[]);}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCommandLineParser_a4f63561f63ed218369469dd53a5d2abc}{validate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCommandLineParser_a270ecf0a81efe9a9718376b7c562afe4}{get\_port}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCommandLineParser_a82b311ecb8ca6c639c92a14009a4b95d}{port}};\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommandLineParser_a07317935953c98939a95f096a5e8b9de}{get\_user\_db\_file}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCommandLineParser_a1298fb5808dc16ff26d32072764f470b}{user\_db\_file}};\ \}}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommandLineParser_a215ab5e5f238a99fa6860d57a2e248f8}{get\_log\_file}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCommandLineParser_a862cf8d4a7dd27cc4fc3f34d0e3e3a2c}{log\_file}};\ \}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMANDLINEPARSER\_H}}
+
+\end{DoxyCode}

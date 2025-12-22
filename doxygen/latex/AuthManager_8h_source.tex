@@ -1,0 +1,48 @@
+\doxysection{Auth\+Manager.\+h}
+\hypertarget{AuthManager_8h_source}{}\label{AuthManager_8h_source}\index{src/AuthManager.h@{src/AuthManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AUTHMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AUTHMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CRYPTOPP\_ENABLE\_NAMESPACE\_WEAK\ 1}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <cryptopp/hex.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cryptopp/md5.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cryptopp/filters.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cryptopp/osrng.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Предварительное\ объявление}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogger}{Logger}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAuthManager}{AuthManager}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::unordered\_map<std::string,\ std::string>\ \mbox{\hyperlink{classAuthManager_a1bbc14420de0b73aad066e35eba1ea28}{users}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classAuthManager_aa41d64c2eaf8c67cc6328065cbf4ffc1}{AuthManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAuthManager_ae091371c2253add5a8aa5a74911be34b}{load\_users}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAuthManager_ac29a90090949220bd8b9113499dd5684}{user\_exists}}(\textcolor{keyword}{const}\ std::string\&\ login);}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ std::string\ \mbox{\hyperlink{classAuthManager_adf0484c27ca7a778ec49ad42bd6be031}{get\_password}}(\textcolor{keyword}{const}\ std::string\&\ login);}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ \mbox{\hyperlink{classAuthManager_a8cbca74095f4aa941dc13d436b29a120}{generate\_salt}}();}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAuthManager_abb2513ed8849b87410dbfeb39b3ce17d}{authenticate}}(\textcolor{keyword}{const}\ std::string\&\ login,\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ client\_hash,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ salt,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLogger}{Logger}}\&\ logger,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ client\_ip);}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classAuthManager_a0542b0cc1410ba309af6584ee5b0c5b2}{compute\_md5\_hash}}(\textcolor{keyword}{const}\ std::string\&\ salt,\ \textcolor{keyword}{const}\ std::string\&\ password);}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ std::string>\&\ \mbox{\hyperlink{classAuthManager_a1c6c25f9d7e36a17017aafed9eb319fb}{get\_users}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classAuthManager_a1bbc14420de0b73aad066e35eba1ea28}{users}};\ \}}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AUTHMANAGER\_H}}
+
+\end{DoxyCode}

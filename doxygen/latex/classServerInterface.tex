@@ -1,0 +1,59 @@
+\doxysection{Класс Server\+Interface}
+\hypertarget{classServerInterface}{}\label{classServerInterface}\index{ServerInterface@{ServerInterface}}
+
+
+Интерфейс для запуска сервера  
+
+
+
+
+{\ttfamily \#include $<$Server\+Interface.\+h$>$}
+
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classServerInterface_a343634a505a574daf0a2e604763e644b}{run}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Запустить сервер с параметрами командной строки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интерфейс для запуска сервера 
+
+Обрабатывает аргументы командной строки и запускает сервер \begin{DoxyAuthor}{Автор}
+Осетров М.\+С. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ПГУ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classServerInterface_a343634a505a574daf0a2e604763e644b}\label{classServerInterface_a343634a505a574daf0a2e604763e644b} 
+\index{ServerInterface@{ServerInterface}!run@{run}}
+\index{run@{run}!ServerInterface@{ServerInterface}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int Server\+Interface\+::run (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Запустить сервер с параметрами командной строки 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em argc} & Количество аргументов \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & Массив аргументов \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Код завершения (0 -\/ успешно, 1 -\/ ошибка) 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/Server\+Interface.\+h\item 
+src/\mbox{\hyperlink{ServerInterface_8cpp}{Server\+Interface.\+cpp}}\end{DoxyCompactItemize}

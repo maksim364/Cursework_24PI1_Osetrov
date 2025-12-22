@@ -1,0 +1,178 @@
+\begin{theindex}
+
+  \item {authenticate}
+    \subitem {AuthManager}, \hyperpage{10}
+  \item {AuthManager}, \hyperpage{9}
+    \subitem {authenticate}, \hyperpage{10}
+    \subitem {compute\_md5\_hash}, \hyperpage{10}
+    \subitem {generate\_salt}, \hyperpage{11}
+    \subitem {get\_password}, \hyperpage{11}
+    \subitem {get\_users}, \hyperpage{11}
+    \subitem {load\_users}, \hyperpage{11}
+    \subitem {user\_exists}, \hyperpage{12}
+
+  \indexspace
+
+  \item {calculate\_sum\_of\_squares}
+    \subitem {DataCalculator}, \hyperpage{16}
+  \item {CommandLineParser}, \hyperpage{12}
+    \subitem {get\_log\_file}, \hyperpage{13}
+    \subitem {get\_port}, \hyperpage{13}
+    \subitem {get\_user\_db\_file}, \hyperpage{14}
+    \subitem {parse}, \hyperpage{14}
+    \subitem {validate}, \hyperpage{14}
+  \item {compute\_md5\_hash}
+    \subitem {AuthManager}, \hyperpage{10}
+
+  \indexspace
+
+  \item {DataCalculator}, \hyperpage{15}
+    \subitem {calculate\_sum\_of\_squares}, \hyperpage{16}
+    \subitem {handle\_overflow}, \hyperpage{16}
+    \subitem {process\_client\_data}, \hyperpage{16}
+    \subitem {read\_exact}, \hyperpage{18}
+    \subitem {send\_exact}, \hyperpage{18}
+
+  \indexspace
+
+  \item {ErrorHandler}, \hyperpage{19}
+    \subitem {ErrorHandler}, \hyperpage{20}
+    \subitem {handle\_auth\_error}, \hyperpage{20}
+    \subitem {handle\_calculation\_error}, \hyperpage{21}
+    \subitem {handle\_critical\_error}, \hyperpage{21}
+    \subitem {handle\_error}, \hyperpage{21}
+    \subitem {handle\_exception}, \hyperpage{21}
+    \subitem {handle\_io\_error}, \hyperpage{22}
+    \subitem {handle\_network\_error}, \hyperpage{22}
+
+  \indexspace
+
+  \item {generate\_salt}
+    \subitem {AuthManager}, \hyperpage{11}
+  \item {get\_client\_ip}
+    \subitem {Server}, \hyperpage{28}
+  \item {get\_current\_time}
+    \subitem {Logger}, \hyperpage{24}
+  \item {get\_log\_file}
+    \subitem {CommandLineParser}, \hyperpage{13}
+  \item {get\_password}
+    \subitem {AuthManager}, \hyperpage{11}
+  \item {get\_port}
+    \subitem {CommandLineParser}, \hyperpage{13}
+  \item {get\_user\_db\_file}
+    \subitem {CommandLineParser}, \hyperpage{14}
+  \item {get\_users}
+    \subitem {AuthManager}, \hyperpage{11}
+
+  \indexspace
+
+  \item {handle\_auth\_error}
+    \subitem {ErrorHandler}, \hyperpage{20}
+  \item {handle\_calculation\_error}
+    \subitem {ErrorHandler}, \hyperpage{21}
+  \item {handle\_client}
+    \subitem {Server}, \hyperpage{28}
+  \item {handle\_critical\_error}
+    \subitem {ErrorHandler}, \hyperpage{21}
+  \item {handle\_error}
+    \subitem {ErrorHandler}, \hyperpage{21}
+  \item {handle\_exception}
+    \subitem {ErrorHandler}, \hyperpage{21}
+  \item {handle\_io\_error}
+    \subitem {ErrorHandler}, \hyperpage{22}
+  \item {handle\_network\_error}
+    \subitem {ErrorHandler}, \hyperpage{22}
+  \item {handle\_overflow}
+    \subitem {DataCalculator}, \hyperpage{16}
+
+  \indexspace
+
+  \item {load\_users}
+    \subitem {AuthManager}, \hyperpage{11}
+  \item {log}
+    \subitem {Logger}, \hyperpage{24}
+  \item {log\_auth}
+    \subitem {Logger}, \hyperpage{24}
+  \item {log\_connection}
+    \subitem {Logger}, \hyperpage{25}
+  \item {log\_data}
+    \subitem {Logger}, \hyperpage{25}
+  \item {log\_debug}
+    \subitem {Logger}, \hyperpage{25}
+  \item {log\_error}
+    \subitem {Logger}, \hyperpage{25}
+  \item {Logger}, \hyperpage{22}
+    \subitem {get\_current\_time}, \hyperpage{24}
+    \subitem {log}, \hyperpage{24}
+    \subitem {log\_auth}, \hyperpage{24}
+    \subitem {log\_connection}, \hyperpage{25}
+    \subitem {log\_data}, \hyperpage{25}
+    \subitem {log\_debug}, \hyperpage{25}
+    \subitem {log\_error}, \hyperpage{25}
+    \subitem {Logger}, \hyperpage{23}
+
+  \indexspace
+
+  \item {parse}
+    \subitem {CommandLineParser}, \hyperpage{14}
+  \item {process\_client\_data}
+    \subitem {DataCalculator}, \hyperpage{16}
+
+  \indexspace
+
+  \item {read\_exact}
+    \subitem {DataCalculator}, \hyperpage{18}
+  \item {README}, \hyperpage{3}
+  \item {recv\_string}
+    \subitem {Server}, \hyperpage{28}
+  \item {run}
+    \subitem {ServerInterface}, \hyperpage{30}
+
+  \indexspace
+
+  \item {send\_exact}
+    \subitem {DataCalculator}, \hyperpage{18}
+  \item {send\_string}
+    \subitem {Server}, \hyperpage{29}
+  \item {Server}, \hyperpage{26}
+    \subitem {get\_client\_ip}, \hyperpage{28}
+    \subitem {handle\_client}, \hyperpage{28}
+    \subitem {recv\_string}, \hyperpage{28}
+    \subitem {send\_string}, \hyperpage{29}
+    \subitem {Server}, \hyperpage{27}
+    \subitem {start}, \hyperpage{29}
+  \item {ServerInterface}, \hyperpage{30}
+    \subitem {run}, \hyperpage{30}
+  \item {src/AuthManager.cpp}, \hyperpage{33}
+  \item {src/AuthManager.h}, \hyperpage{34}
+  \item {src/CommandLineParser.cpp}, \hyperpage{34}
+  \item {src/CommandLineParser.h}, \hyperpage{35}
+  \item {src/DataCalculator.cpp}, \hyperpage{35}
+  \item {src/DataCalculator.h}, \hyperpage{36}
+  \item {src/ErrorHandler.cpp}, \hyperpage{37}
+  \item {src/ErrorHandler.h}, \hyperpage{37}
+  \item {src/Logger.cpp}, \hyperpage{38}
+  \item {src/Logger.h}, \hyperpage{39}
+  \item {src/Server.cpp}, \hyperpage{39}
+  \item {src/Server.h}, \hyperpage{40}
+  \item {src/ServerInterface.cpp}, \hyperpage{41}
+  \item {src/ServerInterface.h}, \hyperpage{41}
+  \item {start}
+    \subitem {Server}, \hyperpage{29}
+
+  \indexspace
+
+  \item {user\_exists}
+    \subitem {AuthManager}, \hyperpage{12}
+
+  \indexspace
+
+  \item {validate}
+    \subitem {CommandLineParser}, \hyperpage{14}
+
+  \indexspace
+
+  \item {Документация сервера обработки данных}, 
+		\hyperpage{1}
+
+\end{theindex}

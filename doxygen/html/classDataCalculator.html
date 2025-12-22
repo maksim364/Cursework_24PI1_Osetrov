@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Сервер обработки данных: Класс DataCalculator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Сервер обработки данных<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pri-static-attribs">Закрытые статические данные</a> &#124;
+<a href="classDataCalculator-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс DataCalculator</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для вычисления суммы квадратов векторов  
+ <a href="classDataCalculator.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="DataCalculator_8h_source.html">DataCalculator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:af1fb0fd0cf05b592fec09218c7a2d1f3" id="r_af1fb0fd0cf05b592fec09218c7a2d1f3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataCalculator.html#af1fb0fd0cf05b592fec09218c7a2d1f3">read_exact</a> (int sock, void *buffer, size_t size)</td></tr>
+<tr class="memdesc:af1fb0fd0cf05b592fec09218c7a2d1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Прочитать точное количество байт из сокета  <br /></td></tr>
+<tr class="separator:af1fb0fd0cf05b592fec09218c7a2d1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdc33d636f03d051042b44e9ea50015" id="r_a0bdc33d636f03d051042b44e9ea50015"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataCalculator.html#a0bdc33d636f03d051042b44e9ea50015">send_exact</a> (int sock, const void *buffer, size_t size)</td></tr>
+<tr class="memdesc:a0bdc33d636f03d051042b44e9ea50015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправить точное количество байт в сокет  <br /></td></tr>
+<tr class="separator:a0bdc33d636f03d051042b44e9ea50015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b9d42f72b21c2325d078521e04cc6e" id="r_a25b9d42f72b21c2325d078521e04cc6e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataCalculator.html#a25b9d42f72b21c2325d078521e04cc6e">process_client_data</a> (int client_sock, class <a class="el" href="classLogger.html">Logger</a> &amp;logger, const std::string &amp;client_ip)</td></tr>
+<tr class="memdesc:a25b9d42f72b21c2325d078521e04cc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать данные от клиента  <br /></td></tr>
+<tr class="separator:a25b9d42f72b21c2325d078521e04cc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab95e52d0590b2f4fdf3854e04530e3" id="r_a3ab95e52d0590b2f4fdf3854e04530e3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataCalculator.html#a3ab95e52d0590b2f4fdf3854e04530e3">calculate_sum_of_squares</a> (const std::vector&lt; double &gt; &amp;vec)</td></tr>
+<tr class="memdesc:a3ab95e52d0590b2f4fdf3854e04530e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычислить сумму квадратов вектора  <br /></td></tr>
+<tr class="separator:a3ab95e52d0590b2f4fdf3854e04530e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf80fea739a5e2bdce61d5c37e58c13" id="r_aadf80fea739a5e2bdce61d5c37e58c13"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataCalculator.html#aadf80fea739a5e2bdce61d5c37e58c13">handle_overflow</a> (double value)</td></tr>
+<tr class="memdesc:aadf80fea739a5e2bdce61d5c37e58c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать переполнение значения  <br /></td></tr>
+<tr class="separator:aadf80fea739a5e2bdce61d5c37e58c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Закрытые статические данные</h2></td></tr>
+<tr class="memitem:a06e07fb1d5f22a86af06d440808b1fc0" id="r_a06e07fb1d5f22a86af06d440808b1fc0"><td class="memItemLeft" align="right" valign="top"><a id="a06e07fb1d5f22a86af06d440808b1fc0" name="a06e07fb1d5f22a86af06d440808b1fc0"></a>
+static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_REASONABLE_VECTORS</b> = 1000</td></tr>
+<tr class="memdesc:a06e07fb1d5f22a86af06d440808b1fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Максимальное разумное количество векторов <br /></td></tr>
+<tr class="separator:a06e07fb1d5f22a86af06d440808b1fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15cbecc78452ef13c3f4215677d091b6" id="r_a15cbecc78452ef13c3f4215677d091b6"><td class="memItemLeft" align="right" valign="top"><a id="a15cbecc78452ef13c3f4215677d091b6" name="a15cbecc78452ef13c3f4215677d091b6"></a>
+static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_REASONABLE_VECTOR_SIZE</b> = 1000000</td></tr>
+<tr class="memdesc:a15cbecc78452ef13c3f4215677d091b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Максимальный разумный размер вектора <br /></td></tr>
+<tr class="separator:a15cbecc78452ef13c3f4215677d091b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для вычисления суммы квадратов векторов </p>
+<p>Обрабатывает данные от клиентов, вычисляет сумму квадратов с проверкой переполнения </p><dl class="section author"><dt>Автор</dt><dd>Осетров М.С. </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025 </dd></dl>
+<dl class="section copyright"><dt>Авторство</dt><dd>ПГУ </dd></dl>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a3ab95e52d0590b2f4fdf3854e04530e3" name="a3ab95e52d0590b2f4fdf3854e04530e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab95e52d0590b2f4fdf3854e04530e3">&#9670;&#160;</a></span>calculate_sum_of_squares()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DataCalculator::calculate_sum_of_squares </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычислить сумму квадратов вектора </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>Вектор значений </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Сумма квадратов элементов вектора </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::overflow_error</td><td>При переполнении вычислений </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aadf80fea739a5e2bdce61d5c37e58c13" name="aadf80fea739a5e2bdce61d5c37e58c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadf80fea739a5e2bdce61d5c37e58c13">&#9670;&#160;</a></span>handle_overflow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DataCalculator::handle_overflow </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработать переполнение значения </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Проверяемое значение </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение с ограничением по диапазону </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::overflow_error</td><td>При недопустимом значении (inf/nan) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a25b9d42f72b21c2325d078521e04cc6e" name="a25b9d42f72b21c2325d078521e04cc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b9d42f72b21c2325d078521e04cc6e">&#9670;&#160;</a></span>process_client_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataCalculator::process_client_data </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>client_sock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class <a class="el" href="classLogger.html">Logger</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>client_ip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработать данные от клиента </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_sock</td><td>Сокет клиента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">logger</td><td>Логгер для записи событий </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_ip</td><td>IP адрес клиента </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если обработка успешна, false при ошибке </dd></dl>
+
+</div>
+</div>
+<a id="af1fb0fd0cf05b592fec09218c7a2d1f3" name="af1fb0fd0cf05b592fec09218c7a2d1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1fb0fd0cf05b592fec09218c7a2d1f3">&#9670;&#160;</a></span>read_exact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataCalculator::read_exact </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Прочитать точное количество байт из сокета </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sock</td><td>Сокет для чтения </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Буфер для данных </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Количество байт для чтения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если успешно, false при ошибке </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>При ошибке чтения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0bdc33d636f03d051042b44e9ea50015" name="a0bdc33d636f03d051042b44e9ea50015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdc33d636f03d051042b44e9ea50015">&#9670;&#160;</a></span>send_exact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataCalculator::send_exact </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправить точное количество байт в сокет </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sock</td><td>Сокет для отправки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Буфер с данными </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Количество байт для отправки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если успешно, false при ошибке </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>При ошибке отправки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="DataCalculator_8h_source.html">DataCalculator.h</a></li>
+<li>src/<a class="el" href="DataCalculator_8cpp.html">DataCalculator.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

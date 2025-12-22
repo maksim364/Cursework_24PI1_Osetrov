@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Сервер обработки данных: Класс ErrorHandler</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Сервер обработки данных<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classErrorHandler-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс ErrorHandler</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для обработки ошибок сервера  
+ <a href="classErrorHandler.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ErrorHandler_8h_source.html">ErrorHandler.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aade37277df7a3075baacaaab2b1ee7b3" id="r_aade37277df7a3075baacaaab2b1ee7b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#aade37277df7a3075baacaaab2b1ee7b3">ErrorHandler</a> (std::shared_ptr&lt; <a class="el" href="classLogger.html">Logger</a> &gt; <a class="el" href="classErrorHandler.html#aa4095750740911f0fc234280d395e418">logger</a>)</td></tr>
+<tr class="memdesc:aade37277df7a3075baacaaab2b1ee7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор обработчика ошибок  <br /></td></tr>
+<tr class="separator:aade37277df7a3075baacaaab2b1ee7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493e36e0d65d830ce19f1717b3c678e7" id="r_a493e36e0d65d830ce19f1717b3c678e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#a493e36e0d65d830ce19f1717b3c678e7">handle_network_error</a> (const std::string &amp;context, int error_code=0)</td></tr>
+<tr class="memdesc:a493e36e0d65d830ce19f1717b3c678e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать сетевую ошибку  <br /></td></tr>
+<tr class="separator:a493e36e0d65d830ce19f1717b3c678e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8abe5c32e4de70790b585e80a9b51c5a" id="r_a8abe5c32e4de70790b585e80a9b51c5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#a8abe5c32e4de70790b585e80a9b51c5a">handle_auth_error</a> (const std::string &amp;client_ip, const std::string &amp;login, const std::string &amp;reason)</td></tr>
+<tr class="memdesc:a8abe5c32e4de70790b585e80a9b51c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать ошибку аутентификации  <br /></td></tr>
+<tr class="separator:a8abe5c32e4de70790b585e80a9b51c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca6201db2d933fce4f3287d0aa6a50d" id="r_a4ca6201db2d933fce4f3287d0aa6a50d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#a4ca6201db2d933fce4f3287d0aa6a50d">handle_calculation_error</a> (const std::string &amp;client_ip, const std::string &amp;operation)</td></tr>
+<tr class="memdesc:a4ca6201db2d933fce4f3287d0aa6a50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать ошибку вычислений  <br /></td></tr>
+<tr class="separator:a4ca6201db2d933fce4f3287d0aa6a50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269e3bc3430bef5a323a4c56884d78b1" id="r_a269e3bc3430bef5a323a4c56884d78b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#a269e3bc3430bef5a323a4c56884d78b1">handle_io_error</a> (const std::string &amp;filename, const std::string &amp;operation)</td></tr>
+<tr class="memdesc:a269e3bc3430bef5a323a4c56884d78b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать I/O ошибку  <br /></td></tr>
+<tr class="separator:a269e3bc3430bef5a323a4c56884d78b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39bf3031229beacc84b4cbb0c5696b59" id="r_a39bf3031229beacc84b4cbb0c5696b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#a39bf3031229beacc84b4cbb0c5696b59">handle_exception</a> (const std::exception &amp;e, const std::string &amp;context)</td></tr>
+<tr class="memdesc:a39bf3031229beacc84b4cbb0c5696b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать исключение  <br /></td></tr>
+<tr class="separator:a39bf3031229beacc84b4cbb0c5696b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acafa1db95c1fa0ffabcb545f48165e62" id="r_acafa1db95c1fa0ffabcb545f48165e62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#acafa1db95c1fa0ffabcb545f48165e62">handle_critical_error</a> (const std::string &amp;error_message)</td></tr>
+<tr class="memdesc:acafa1db95c1fa0ffabcb545f48165e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработать критическую ошибку  <br /></td></tr>
+<tr class="separator:acafa1db95c1fa0ffabcb545f48165e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704c84d2d5363f0d5965ee78d2a0699e" id="r_a704c84d2d5363f0d5965ee78d2a0699e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classErrorHandler.html#a704c84d2d5363f0d5965ee78d2a0699e">handle_error</a> (const std::string &amp;error_type, const std::string &amp;message, bool is_critical=false)</td></tr>
+<tr class="memdesc:a704c84d2d5363f0d5965ee78d2a0699e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Общий метод обработки ошибок  <br /></td></tr>
+<tr class="separator:a704c84d2d5363f0d5965ee78d2a0699e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:aa4095750740911f0fc234280d395e418" id="r_aa4095750740911f0fc234280d395e418"><td class="memItemLeft" align="right" valign="top"><a id="aa4095750740911f0fc234280d395e418" name="aa4095750740911f0fc234280d395e418"></a>
+std::shared_ptr&lt; class <a class="el" href="classLogger.html">Logger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b></td></tr>
+<tr class="memdesc:aa4095750740911f0fc234280d395e418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Логгер для записи ошибок <br /></td></tr>
+<tr class="separator:aa4095750740911f0fc234280d395e418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс для обработки ошибок сервера </p>
+<p>Обрабатывает различные типы ошибок: сетевые, аутентификации, вычислений, I/O </p><dl class="section author"><dt>Автор</dt><dd>Осетров М.С. </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025 </dd></dl>
+<dl class="section copyright"><dt>Авторство</dt><dd>ПГУ </dd></dl>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aade37277df7a3075baacaaab2b1ee7b3" name="aade37277df7a3075baacaaab2b1ee7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aade37277df7a3075baacaaab2b1ee7b3">&#9670;&#160;</a></span>ErrorHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ErrorHandler::ErrorHandler </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classLogger.html">Logger</a> &gt;&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор обработчика ошибок </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">logger</td><td>Общий логгер для записи ошибок </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a8abe5c32e4de70790b585e80a9b51c5a" name="a8abe5c32e4de70790b585e80a9b51c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8abe5c32e4de70790b585e80a9b51c5a">&#9670;&#160;</a></span>handle_auth_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_auth_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>client_ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>reason</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обработать ошибку аутентификации </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_ip</td><td>IP клиента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">login</td><td>Логин пользователя </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reason</td><td>Причина ошибки </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4ca6201db2d933fce4f3287d0aa6a50d" name="a4ca6201db2d933fce4f3287d0aa6a50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca6201db2d933fce4f3287d0aa6a50d">&#9670;&#160;</a></span>handle_calculation_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_calculation_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>client_ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>operation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обработать ошибку вычислений </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_ip</td><td>IP клиента </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">operation</td><td>Операция, вызвавшая ошибку </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acafa1db95c1fa0ffabcb545f48165e62" name="acafa1db95c1fa0ffabcb545f48165e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acafa1db95c1fa0ffabcb545f48165e62">&#9670;&#160;</a></span>handle_critical_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_critical_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>error_message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обработать критическую ошибку </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">error_message</td><td>Сообщение об ошибке </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Всегда выбрасывает исключение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a704c84d2d5363f0d5965ee78d2a0699e" name="a704c84d2d5363f0d5965ee78d2a0699e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704c84d2d5363f0d5965ee78d2a0699e">&#9670;&#160;</a></span>handle_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>error_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_critical</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Общий метод обработки ошибок </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">error_type</td><td>Тип ошибки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Сообщение об ошибке </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_critical</td><td>Флаг критичности ошибки (по умолчанию false) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если is_critical == true </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a39bf3031229beacc84b4cbb0c5696b59" name="a39bf3031229beacc84b4cbb0c5696b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39bf3031229beacc84b4cbb0c5696b59">&#9670;&#160;</a></span>handle_exception()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_exception </td>
+          <td>(</td>
+          <td class="paramtype">const std::exception &amp;&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обработать исключение </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">e</td><td>Исключение </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>Контекст, где произошло исключение </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a269e3bc3430bef5a323a4c56884d78b1" name="a269e3bc3430bef5a323a4c56884d78b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269e3bc3430bef5a323a4c56884d78b1">&#9670;&#160;</a></span>handle_io_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_io_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>operation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обработать I/O ошибку </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Имя файла </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">operation</td><td>Операция (чтение/запись) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a493e36e0d65d830ce19f1717b3c678e7" name="a493e36e0d65d830ce19f1717b3c678e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493e36e0d65d830ce19f1717b3c678e7">&#9670;&#160;</a></span>handle_network_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ErrorHandler::handle_network_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>error_code</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обработать сетевую ошибку </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>Контекст ошибки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">error_code</td><td>Код ошибки (0 для использования errno) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="ErrorHandler_8h_source.html">ErrorHandler.h</a></li>
+<li>src/<a class="el" href="ErrorHandler_8cpp.html">ErrorHandler.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

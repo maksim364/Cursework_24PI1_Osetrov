@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Сервер обработки данных: Исходный файл src/DataCalculator.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Сервер обработки данных<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">DataCalculator.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef DATACALCULATOR_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DATACALCULATOR_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classDataCalculator.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="classDataCalculator.html">DataCalculator</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classDataCalculator.html#a06e07fb1d5f22a86af06d440808b1fc0">   15</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="classDataCalculator.html#a06e07fb1d5f22a86af06d440808b1fc0">MAX_REASONABLE_VECTORS</a> = 1000;      </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classDataCalculator.html#a15cbecc78452ef13c3f4215677d091b6">   16</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="classDataCalculator.html#a15cbecc78452ef13c3f4215677d091b6">MAX_REASONABLE_VECTOR_SIZE</a> = 1000000; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classDataCalculator.html#af1fb0fd0cf05b592fec09218c7a2d1f3">read_exact</a>(<span class="keywordtype">int</span> sock, <span class="keywordtype">void</span>* buffer, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classDataCalculator.html#a0bdc33d636f03d051042b44e9ea50015">send_exact</a>(<span class="keywordtype">int</span> sock, <span class="keyword">const</span> <span class="keywordtype">void</span>* buffer, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classDataCalculator.html#a25b9d42f72b21c2325d078521e04cc6e">process_client_data</a>(<span class="keywordtype">int</span> client_sock, <span class="keyword">class</span> <a class="code hl_class" href="classLogger.html">Logger</a>&amp; logger, <span class="keyword">const</span> std::string&amp; client_ip);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classDataCalculator.html#a3ab95e52d0590b2f4fdf3854e04530e3">calculate_sum_of_squares</a>(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; vec);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classDataCalculator.html#aadf80fea739a5e2bdce61d5c37e58c13">handle_overflow</a>(<span class="keywordtype">double</span> value);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">// DATACALCULATOR_H</span></div>
+<div class="ttc" id="aclassDataCalculator_html"><div class="ttname"><a href="classDataCalculator.html">DataCalculator</a></div><div class="ttdoc">Класс для вычисления суммы квадратов векторов</div><div class="ttdef"><b>Definition</b> DataCalculator.h:13</div></div>
+<div class="ttc" id="aclassDataCalculator_html_a06e07fb1d5f22a86af06d440808b1fc0"><div class="ttname"><a href="classDataCalculator.html#a06e07fb1d5f22a86af06d440808b1fc0">DataCalculator::MAX_REASONABLE_VECTORS</a></div><div class="ttdeci">static constexpr uint32_t MAX_REASONABLE_VECTORS</div><div class="ttdoc">Максимальное разумное количество векторов</div><div class="ttdef"><b>Definition</b> DataCalculator.h:15</div></div>
+<div class="ttc" id="aclassDataCalculator_html_a0bdc33d636f03d051042b44e9ea50015"><div class="ttname"><a href="classDataCalculator.html#a0bdc33d636f03d051042b44e9ea50015">DataCalculator::send_exact</a></div><div class="ttdeci">static bool send_exact(int sock, const void *buffer, size_t size)</div><div class="ttdoc">Отправить точное количество байт в сокет</div><div class="ttdef"><b>Definition</b> DataCalculator.cpp:46</div></div>
+<div class="ttc" id="aclassDataCalculator_html_a15cbecc78452ef13c3f4215677d091b6"><div class="ttname"><a href="classDataCalculator.html#a15cbecc78452ef13c3f4215677d091b6">DataCalculator::MAX_REASONABLE_VECTOR_SIZE</a></div><div class="ttdeci">static constexpr uint32_t MAX_REASONABLE_VECTOR_SIZE</div><div class="ttdoc">Максимальный разумный размер вектора</div><div class="ttdef"><b>Definition</b> DataCalculator.h:16</div></div>
+<div class="ttc" id="aclassDataCalculator_html_a25b9d42f72b21c2325d078521e04cc6e"><div class="ttname"><a href="classDataCalculator.html#a25b9d42f72b21c2325d078521e04cc6e">DataCalculator::process_client_data</a></div><div class="ttdeci">static bool process_client_data(int client_sock, class Logger &amp;logger, const std::string &amp;client_ip)</div><div class="ttdoc">Обработать данные от клиента</div><div class="ttdef"><b>Definition</b> DataCalculator.cpp:103</div></div>
+<div class="ttc" id="aclassDataCalculator_html_a3ab95e52d0590b2f4fdf3854e04530e3"><div class="ttname"><a href="classDataCalculator.html#a3ab95e52d0590b2f4fdf3854e04530e3">DataCalculator::calculate_sum_of_squares</a></div><div class="ttdeci">static double calculate_sum_of_squares(const std::vector&lt; double &gt; &amp;vec)</div><div class="ttdoc">Вычислить сумму квадратов вектора</div><div class="ttdef"><b>Definition</b> DataCalculator.cpp:68</div></div>
+<div class="ttc" id="aclassDataCalculator_html_aadf80fea739a5e2bdce61d5c37e58c13"><div class="ttname"><a href="classDataCalculator.html#aadf80fea739a5e2bdce61d5c37e58c13">DataCalculator::handle_overflow</a></div><div class="ttdeci">static double handle_overflow(double value)</div><div class="ttdoc">Обработать переполнение значения</div><div class="ttdef"><b>Definition</b> DataCalculator.cpp:90</div></div>
+<div class="ttc" id="aclassDataCalculator_html_af1fb0fd0cf05b592fec09218c7a2d1f3"><div class="ttname"><a href="classDataCalculator.html#af1fb0fd0cf05b592fec09218c7a2d1f3">DataCalculator::read_exact</a></div><div class="ttdeci">static bool read_exact(int sock, void *buffer, size_t size)</div><div class="ttdoc">Прочитать точное количество байт из сокета</div><div class="ttdef"><b>Definition</b> DataCalculator.cpp:23</div></div>
+<div class="ttc" id="aclassLogger_html"><div class="ttname"><a href="classLogger.html">Logger</a></div><div class="ttdoc">Класс для логирования событий сервера</div><div class="ttdef"><b>Definition</b> Logger.h:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

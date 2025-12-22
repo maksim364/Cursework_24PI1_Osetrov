@@ -1,0 +1,213 @@
+\doxysection{Класс Server}
+\hypertarget{classServer}{}\label{classServer}\index{Server@{Server}}
+
+
+Основной класс сервера  
+
+
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+
+
+Граф связей класса Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classServer_af2fc938a98f52921c960edff26ea41df}{get\+\_\+client\+\_\+ip}} (int client\+\_\+sock)
+\begin{DoxyCompactList}\small\item\em Получить IP адрес клиента \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_a3b269fbcd91534eaa0fd2c7a37e3eebb}{send\+\_\+string}} (int sock, const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Отправить строку клиенту \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_ab6ee706b5de80785eaea02acd525b611}{recv\+\_\+string}} (int sock, std\+::string \&str, size\+\_\+t max\+\_\+len=1024)
+\begin{DoxyCompactList}\small\item\em Принять строку от клиента \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_adf699c64408ac0fe3217499f6139d2e8}{handle\+\_\+client}} (int client\+\_\+sock)
+\begin{DoxyCompactList}\small\item\em Обработать подключение клиента \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServer_a305ef127f959b38efc9887d384f3a3c1}{Server}} (int \mbox{\hyperlink{classServer_a926c9dae229a62b6d33fdbb41dca6d82}{port}}, const std\+::string \&\mbox{\hyperlink{classServer_a6dfc5d68ac482c49a34c3e2c5a50d8f4}{user\+\_\+db\+\_\+file}}, const std\+::string \&\mbox{\hyperlink{classServer_a15950052beb63396b2bc778c13777d8c}{log\+\_\+file}})
+\begin{DoxyCompactList}\small\item\em Конструктор сервера \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Server} ()
+\begin{DoxyCompactList}\small\item\em Деструктор сервера \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServer_acec935535d1d5b58d95cf24678eac014}{start}} ()
+\begin{DoxyCompactList}\small\item\em Запустить сервер \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a07c45a7e101a3926d8f9685c3c5d14e4}\label{classServer_a07c45a7e101a3926d8f9685c3c5d14e4} 
+void {\bfseries stop} ()
+\begin{DoxyCompactList}\small\item\em Остановить сервер \end{DoxyCompactList}\item 
+\Hypertarget{classServer_abb27d30b40a94326e3fd629d3b30b7d5}\label{classServer_abb27d30b40a94326e3fd629d3b30b7d5} 
+void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Основной цикл работы сервера \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classServer_a926c9dae229a62b6d33fdbb41dca6d82}\label{classServer_a926c9dae229a62b6d33fdbb41dca6d82} 
+int {\bfseries port}
+\begin{DoxyCompactList}\small\item\em Порт сервера \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a6dfc5d68ac482c49a34c3e2c5a50d8f4}\label{classServer_a6dfc5d68ac482c49a34c3e2c5a50d8f4} 
+std\+::string {\bfseries user\+\_\+db\+\_\+file}
+\begin{DoxyCompactList}\small\item\em Файл базы пользователей \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a15950052beb63396b2bc778c13777d8c}\label{classServer_a15950052beb63396b2bc778c13777d8c} 
+std\+::string {\bfseries log\+\_\+file}
+\begin{DoxyCompactList}\small\item\em Файл журнала \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a57beb9fd0b69c48a60ff2865905edee2}\label{classServer_a57beb9fd0b69c48a60ff2865905edee2} 
+std\+::shared\+\_\+ptr$<$ class \mbox{\hyperlink{classLogger}{Logger}} $>$ {\bfseries logger}
+\begin{DoxyCompactList}\small\item\em Логгер \end{DoxyCompactList}\item 
+\Hypertarget{classServer_af77a2afcad670c4197d33f0bdc17cbe0}\label{classServer_af77a2afcad670c4197d33f0bdc17cbe0} 
+std\+::shared\+\_\+ptr$<$ class \mbox{\hyperlink{classErrorHandler}{Error\+Handler}} $>$ {\bfseries error\+\_\+handler}
+\begin{DoxyCompactList}\small\item\em Обработчик ошибок \end{DoxyCompactList}\item 
+\Hypertarget{classServer_afa2c6bc8cd3df9ef02624f5ba22efff7}\label{classServer_afa2c6bc8cd3df9ef02624f5ba22efff7} 
+class \mbox{\hyperlink{classAuthManager}{Auth\+Manager}} {\bfseries auth\+\_\+manager}
+\begin{DoxyCompactList}\small\item\em Менеджер аутентификации \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a597fe0c56c29950a94d078d362fed51a}\label{classServer_a597fe0c56c29950a94d078d362fed51a} 
+int {\bfseries server\+\_\+socket}
+\begin{DoxyCompactList}\small\item\em Сокет сервера \end{DoxyCompactList}\item 
+\Hypertarget{classServer_a4db32e1a16e0423cf619d7914fa9b8c2}\label{classServer_a4db32e1a16e0423cf619d7914fa9b8c2} 
+bool {\bfseries running}
+\begin{DoxyCompactList}\small\item\em Флаг работы сервера \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Основной класс сервера 
+
+Управляет подключениями клиентов, аутентификацией и обработкой данных \begin{DoxyAuthor}{Автор}
+Осетров М.\+С. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ПГУ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classServer_a305ef127f959b38efc9887d384f3a3c1}\label{classServer_a305ef127f959b38efc9887d384f3a3c1} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{const std\+::string \&}]{user\+\_\+db\+\_\+file,  }\item[{const std\+::string \&}]{log\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Конструктор сервера 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em port} & Порт для прослушивания \\
+\hline
+\mbox{\texttt{ in}}  & {\em user\+\_\+db\+\_\+file} & Файл базы пользователей \\
+\hline
+\mbox{\texttt{ in}}  & {\em log\+\_\+file} & Файл журнала \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & При ошибке инициализации \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classServer_af2fc938a98f52921c960edff26ea41df}\label{classServer_af2fc938a98f52921c960edff26ea41df} 
+\index{Server@{Server}!get\_client\_ip@{get\_client\_ip}}
+\index{get\_client\_ip@{get\_client\_ip}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{get\_client\_ip()}{get\_client\_ip()}}
+{\footnotesize\ttfamily std\+::string Server\+::get\+\_\+client\+\_\+ip (\begin{DoxyParamCaption}\item[{int}]{client\+\_\+sock }\end{DoxyParamCaption})}
+
+
+
+Получить IP адрес клиента 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em client\+\_\+sock} & Сокет клиента \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+IP адрес клиента или "{}unknown"{} при ошибке 
+\end{DoxyReturn}
+\Hypertarget{classServer_adf699c64408ac0fe3217499f6139d2e8}\label{classServer_adf699c64408ac0fe3217499f6139d2e8} 
+\index{Server@{Server}!handle\_client@{handle\_client}}
+\index{handle\_client@{handle\_client}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{handle\_client()}{handle\_client()}}
+{\footnotesize\ttfamily bool Server\+::handle\+\_\+client (\begin{DoxyParamCaption}\item[{int}]{client\+\_\+sock }\end{DoxyParamCaption})}
+
+
+
+Обработать подключение клиента 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em client\+\_\+sock} & Сокет клиента \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если обработка завершена (успешно или с ошибкой) 
+\end{DoxyReturn}
+\Hypertarget{classServer_ab6ee706b5de80785eaea02acd525b611}\label{classServer_ab6ee706b5de80785eaea02acd525b611} 
+\index{Server@{Server}!recv\_string@{recv\_string}}
+\index{recv\_string@{recv\_string}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{recv\_string()}{recv\_string()}}
+{\footnotesize\ttfamily bool Server\+::recv\+\_\+string (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{std\+::string \&}]{str,  }\item[{size\+\_\+t}]{max\+\_\+len = {\ttfamily 1024} }\end{DoxyParamCaption})}
+
+
+
+Принять строку от клиента 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em sock} & Сокет клиента \\
+\hline
+\mbox{\texttt{ out}}  & {\em str} & Принятая строка \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+len} & Максимальная длина строки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если успешно, false при ошибке 
+\end{DoxyReturn}
+\Hypertarget{classServer_a3b269fbcd91534eaa0fd2c7a37e3eebb}\label{classServer_a3b269fbcd91534eaa0fd2c7a37e3eebb} 
+\index{Server@{Server}!send\_string@{send\_string}}
+\index{send\_string@{send\_string}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{send\_string()}{send\_string()}}
+{\footnotesize\ttfamily bool Server\+::send\+\_\+string (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Отправить строку клиенту 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em sock} & Сокет клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em str} & Строка для отправки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если успешно, false при ошибке 
+\end{DoxyReturn}
+\Hypertarget{classServer_acec935535d1d5b58d95cf24678eac014}\label{classServer_acec935535d1d5b58d95cf24678eac014} 
+\index{Server@{Server}!start@{start}}
+\index{start@{start}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool Server\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Запустить сервер 
+
+\begin{DoxyReturn}{Возвращает}
+true если успешно, false при ошибке 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/Server.\+h\item 
+src/\mbox{\hyperlink{Server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

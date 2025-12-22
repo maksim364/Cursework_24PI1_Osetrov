@@ -1,0 +1,201 @@
+\doxysection{Класс Logger}
+\hypertarget{classLogger}{}\label{classLogger}\index{Logger@{Logger}}
+
+
+Класс для логирования событий сервера  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLogger_a4f2ee02db1d03a83b6b9b43808e09f15}{Logger}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Конструктор логгера \end{DoxyCompactList}\item 
+\Hypertarget{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}\label{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Logger} ()
+\begin{DoxyCompactList}\small\item\em Деструктор логгера \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_af5bd3aa615eb67a5a49c02d8040812db}{log}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Записать общее сообщение \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ade1d9d24e999b8c6bbb506a1cdba50ec}{log\+\_\+auth}} (const std\+::string \&ip, const std\+::string \&login, bool success, const std\+::string \&details="{}"{})
+\begin{DoxyCompactList}\small\item\em Записать событие аутентификации \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a5f5dd5f84b2cbc738e9fb01610ba539d}{log\+\_\+connection}} (const std\+::string \&ip, bool connected)
+\begin{DoxyCompactList}\small\item\em Записать событие подключения/отключения \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ab6980ca625f295fd1f1c0a392ace7224}{log\+\_\+data}} (const std\+::string \&ip, const std\+::string \&operation)
+\begin{DoxyCompactList}\small\item\em Записать событие обработки данных \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a1deee8fa8f21c2ab7d25fb9fb4cb1f1c}{log\+\_\+error}} (const std\+::string \&error)
+\begin{DoxyCompactList}\small\item\em Записать сообщение об ошибке \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_afa7b17aab0368fc9d835cde3003ee52a}{log\+\_\+debug}} (const std\+::string \&msg)
+\begin{DoxyCompactList}\small\item\em Записать отладочное сообщение \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classLogger_aaff42813783601ee85e141e68893af96}{get\+\_\+current\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Получить текущее время в формате строки \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classLogger_a040bd1e498724fbecef2fee3d529ce9e}\label{classLogger_a040bd1e498724fbecef2fee3d529ce9e} 
+std\+::ofstream {\bfseries log\+\_\+file}
+\begin{DoxyCompactList}\small\item\em Файл журнала \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для логирования событий сервера 
+
+Записывает логи в файл и выводит в консоль \begin{DoxyAuthor}{Автор}
+Осетров М.\+С. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ПГУ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Конструктор(ы)}
+\Hypertarget{classLogger_a4f2ee02db1d03a83b6b9b43808e09f15}\label{classLogger_a4f2ee02db1d03a83b6b9b43808e09f15} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор логгера 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em filename} & Имя файла журнала \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & При ошибке открытия файла \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classLogger_aaff42813783601ee85e141e68893af96}\label{classLogger_aaff42813783601ee85e141e68893af96} 
+\index{Logger@{Logger}!get\_current\_time@{get\_current\_time}}
+\index{get\_current\_time@{get\_current\_time}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{get\_current\_time()}{get\_current\_time()}}
+{\footnotesize\ttfamily std\+::string Logger\+::get\+\_\+current\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получить текущее время в формате строки 
+
+\begin{DoxyReturn}{Возвращает}
+Строка с текущим временем 
+\end{DoxyReturn}
+\Hypertarget{classLogger_af5bd3aa615eb67a5a49c02d8040812db}\label{classLogger_af5bd3aa615eb67a5a49c02d8040812db} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Logger\+::log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Записать общее сообщение 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em message} & Сообщение для записи \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_ade1d9d24e999b8c6bbb506a1cdba50ec}\label{classLogger_ade1d9d24e999b8c6bbb506a1cdba50ec} 
+\index{Logger@{Logger}!log\_auth@{log\_auth}}
+\index{log\_auth@{log\_auth}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log\_auth()}{log\_auth()}}
+{\footnotesize\ttfamily void Logger\+::log\+\_\+auth (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{const std\+::string \&}]{login,  }\item[{bool}]{success,  }\item[{const std\+::string \&}]{details = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Записать событие аутентификации 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em ip} & IP адрес клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em login} & Логин пользователя \\
+\hline
+\mbox{\texttt{ in}}  & {\em success} & Результат аутентификации \\
+\hline
+\mbox{\texttt{ in}}  & {\em details} & Детали аутентификации (по умолчанию пустая строка) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_a5f5dd5f84b2cbc738e9fb01610ba539d}\label{classLogger_a5f5dd5f84b2cbc738e9fb01610ba539d} 
+\index{Logger@{Logger}!log\_connection@{log\_connection}}
+\index{log\_connection@{log\_connection}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log\_connection()}{log\_connection()}}
+{\footnotesize\ttfamily void Logger\+::log\+\_\+connection (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{bool}]{connected }\end{DoxyParamCaption})}
+
+
+
+Записать событие подключения/отключения 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em ip} & IP адрес клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em connected} & Флаг подключения (true) или отключения (false) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_ab6980ca625f295fd1f1c0a392ace7224}\label{classLogger_ab6980ca625f295fd1f1c0a392ace7224} 
+\index{Logger@{Logger}!log\_data@{log\_data}}
+\index{log\_data@{log\_data}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log\_data()}{log\_data()}}
+{\footnotesize\ttfamily void Logger\+::log\+\_\+data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip,  }\item[{const std\+::string \&}]{operation }\end{DoxyParamCaption})}
+
+
+
+Записать событие обработки данных 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em ip} & IP адрес клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em operation} & Операция с данными \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_afa7b17aab0368fc9d835cde3003ee52a}\label{classLogger_afa7b17aab0368fc9d835cde3003ee52a} 
+\index{Logger@{Logger}!log\_debug@{log\_debug}}
+\index{log\_debug@{log\_debug}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log\_debug()}{log\_debug()}}
+{\footnotesize\ttfamily void Logger\+::log\+\_\+debug (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Записать отладочное сообщение 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em msg} & Текст отладочного сообщения \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_a1deee8fa8f21c2ab7d25fb9fb4cb1f1c}\label{classLogger_a1deee8fa8f21c2ab7d25fb9fb4cb1f1c} 
+\index{Logger@{Logger}!log\_error@{log\_error}}
+\index{log\_error@{log\_error}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log\_error()}{log\_error()}}
+{\footnotesize\ttfamily void Logger\+::log\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Записать сообщение об ошибке 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em error} & Текст ошибки \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/Logger.\+h\item 
+src/\mbox{\hyperlink{Logger_8cpp}{Logger.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+\chapter{README}
+\hypertarget{md_README}{}\label{md_README}\index{README@{README}}
+\#Курсовой проект\+: Сервер обработки данных
+
+\#Описание Серверная часть клиент-\/серверной системы для обработки векторов данных с аутентификацией по MD5.
+
+\#Функциональность
+\begin{DoxyItemize}
+\item Аутентификация клиентов по логину/паролю с использованием MD5 и соли
+\item Прием бинарных данных (векторов чисел double)
+\item Вычисление суммы квадратов для каждого вектора
+\item Защита от переполнения
+\item Логирование всех событий в файл
+\item Конфигурация через параметры командной строки
+\end{DoxyItemize}
+
+\#Сборка и запуск 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Сборка}
+\DoxyCodeLine{make\ all}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md0}{}\doxysubsection{\texorpdfstring{Запуск}{Запуск}}\label{md_README_autotoc_md0}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{\#По\ умолчанию\ параметры:\ Порт=33333,\ Файл\ с\ пользователями\ =\ data/users.txt,\ Журнал\ =\ sever.log}
+\DoxyCodeLine{./server\ }
+\DoxyCodeLine{./server\ -\/p\ 33333\ -\/u\ data/users.txt\ -\/l\ server.log}
+\DoxyCodeLine{./server\ -\/-\/port\ 33333\ -\/-\/users\ data/users.txt\ -\/-\/log\ server.log}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md1}{}\doxysubsection{\texorpdfstring{Справка}{Справка}}\label{md_README_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{./server\ -\/-\/help}
+\DoxyCodeLine{./server\ -\/h}
+
+\end{DoxyCode}
+ 

@@ -1,0 +1,199 @@
+\doxysection{Класс Auth\+Manager}
+\hypertarget{classAuthManager}{}\label{classAuthManager}\index{AuthManager@{AuthManager}}
+
+
+Класс для управления аутентификацией пользователей  
+
+
+
+
+{\ttfamily \#include $<$Auth\+Manager.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAuthManager_aa41d64c2eaf8c67cc6328065cbf4ffc1}\label{classAuthManager_aa41d64c2eaf8c67cc6328065cbf4ffc1} 
+{\bfseries Auth\+Manager} ()=default
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAuthManager_ae091371c2253add5a8aa5a74911be34b}{load\+\_\+users}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Загрузить пользователей из файла \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAuthManager_ac29a90090949220bd8b9113499dd5684}{user\+\_\+exists}} (const std\+::string \&login)
+\begin{DoxyCompactList}\small\item\em Проверить существование пользователя \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAuthManager_adf0484c27ca7a778ec49ad42bd6be031}{get\+\_\+password}} (const std\+::string \&login)
+\begin{DoxyCompactList}\small\item\em Получить пароль пользователя \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAuthManager_a8cbca74095f4aa941dc13d436b29a120}{generate\+\_\+salt}} ()
+\begin{DoxyCompactList}\small\item\em Сгенерировать случайную соль \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAuthManager_abb2513ed8849b87410dbfeb39b3ce17d}{authenticate}} (const std\+::string \&login, const std\+::string \&client\+\_\+hash, const std\+::string \&salt, \mbox{\hyperlink{classLogger}{Logger}} \&logger, const std\+::string \&client\+\_\+ip)
+\begin{DoxyCompactList}\small\item\em Аутентифицировать пользователя \end{DoxyCompactList}\item 
+const std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \& \mbox{\hyperlink{classAuthManager_a1c6c25f9d7e36a17017aafed9eb319fb}{get\+\_\+users}} () const
+\begin{DoxyCompactList}\small\item\em Получить копию базы пользователей \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classAuthManager_a0542b0cc1410ba309af6584ee5b0c5b2}{compute\+\_\+md5\+\_\+hash}} (const std\+::string \&salt, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Вычислить MD5 хеш \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAuthManager_a1bbc14420de0b73aad066e35eba1ea28}\label{classAuthManager_a1bbc14420de0b73aad066e35eba1ea28} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ {\bfseries users}
+\begin{DoxyCompactList}\small\item\em База пользователей (логин → пароль) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для управления аутентификацией пользователей 
+
+Загружает базу пользователей, генерирует соль, проверяет хеши MD5 \begin{DoxyAuthor}{Автор}
+Осетров М.\+С. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Дата}
+2025 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Авторство}
+ПГУ 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Методы}
+\Hypertarget{classAuthManager_abb2513ed8849b87410dbfeb39b3ce17d}\label{classAuthManager_abb2513ed8849b87410dbfeb39b3ce17d} 
+\index{AuthManager@{AuthManager}!authenticate@{authenticate}}
+\index{authenticate@{authenticate}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{authenticate()}{authenticate()}}
+{\footnotesize\ttfamily bool Auth\+Manager\+::authenticate (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login,  }\item[{const std\+::string \&}]{client\+\_\+hash,  }\item[{const std\+::string \&}]{salt,  }\item[{\mbox{\hyperlink{classLogger}{Logger}} \&}]{logger,  }\item[{const std\+::string \&}]{client\+\_\+ip }\end{DoxyParamCaption})}
+
+
+
+Аутентифицировать пользователя 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em login} & Логин пользователя \\
+\hline
+\mbox{\texttt{ in}}  & {\em client\+\_\+hash} & Хеш от клиента \\
+\hline
+\mbox{\texttt{ in}}  & {\em salt} & Соль использованная для хеширования \\
+\hline
+\mbox{\texttt{ in}}  & {\em logger} & Логгер для записи событий \\
+\hline
+\mbox{\texttt{ in}}  & {\em client\+\_\+ip} & IP адрес клиента \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если аутентификация успешна 
+\end{DoxyReturn}
+\Hypertarget{classAuthManager_a0542b0cc1410ba309af6584ee5b0c5b2}\label{classAuthManager_a0542b0cc1410ba309af6584ee5b0c5b2} 
+\index{AuthManager@{AuthManager}!compute\_md5\_hash@{compute\_md5\_hash}}
+\index{compute\_md5\_hash@{compute\_md5\_hash}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{compute\_md5\_hash()}{compute\_md5\_hash()}}
+{\footnotesize\ttfamily std\+::string Auth\+Manager\+::compute\+\_\+md5\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{salt,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Вычислить MD5 хеш 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em salt} & Соль \\
+\hline
+\mbox{\texttt{ in}}  & {\em password} & Пароль \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+MD5 хеш в верхнем регистре 
+\end{DoxyReturn}
+\Hypertarget{classAuthManager_a8cbca74095f4aa941dc13d436b29a120}\label{classAuthManager_a8cbca74095f4aa941dc13d436b29a120} 
+\index{AuthManager@{AuthManager}!generate\_salt@{generate\_salt}}
+\index{generate\_salt@{generate\_salt}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{generate\_salt()}{generate\_salt()}}
+{\footnotesize\ttfamily std\+::string Auth\+Manager\+::generate\+\_\+salt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Сгенерировать случайную соль 
+
+\begin{DoxyReturn}{Возвращает}
+Соль в шестнадцатеричном формате (16 символов) 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & При ошибке генерации \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classAuthManager_adf0484c27ca7a778ec49ad42bd6be031}\label{classAuthManager_adf0484c27ca7a778ec49ad42bd6be031} 
+\index{AuthManager@{AuthManager}!get\_password@{get\_password}}
+\index{get\_password@{get\_password}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{get\_password()}{get\_password()}}
+{\footnotesize\ttfamily std\+::string Auth\+Manager\+::get\+\_\+password (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login }\end{DoxyParamCaption})}
+
+
+
+Получить пароль пользователя 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em login} & Логин пользователя \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Пароль пользователя или пустая строка если пользователь не найден 
+\end{DoxyReturn}
+\Hypertarget{classAuthManager_a1c6c25f9d7e36a17017aafed9eb319fb}\label{classAuthManager_a1c6c25f9d7e36a17017aafed9eb319fb} 
+\index{AuthManager@{AuthManager}!get\_users@{get\_users}}
+\index{get\_users@{get\_users}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{get\_users()}{get\_users()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \& Auth\+Manager\+::get\+\_\+users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Получить копию базы пользователей 
+
+\begin{DoxyReturn}{Возвращает}
+Константная ссылка на базу пользователей 
+\end{DoxyReturn}
+\Hypertarget{classAuthManager_ae091371c2253add5a8aa5a74911be34b}\label{classAuthManager_ae091371c2253add5a8aa5a74911be34b} 
+\index{AuthManager@{AuthManager}!load\_users@{load\_users}}
+\index{load\_users@{load\_users}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{load\_users()}{load\_users()}}
+{\footnotesize\ttfamily bool Auth\+Manager\+::load\+\_\+users (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Загрузить пользователей из файла 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em filename} & Имя файла с базой пользователей \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если успешно 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em std\+::runtime\+\_\+error} & При ошибке чтения файла или отсутствии пользователей \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classAuthManager_ac29a90090949220bd8b9113499dd5684}\label{classAuthManager_ac29a90090949220bd8b9113499dd5684} 
+\index{AuthManager@{AuthManager}!user\_exists@{user\_exists}}
+\index{user\_exists@{user\_exists}!AuthManager@{AuthManager}}
+\doxysubsubsection{\texorpdfstring{user\_exists()}{user\_exists()}}
+{\footnotesize\ttfamily bool Auth\+Manager\+::user\+\_\+exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{login }\end{DoxyParamCaption})}
+
+
+
+Проверить существование пользователя 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em login} & Логин пользователя \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если пользователь существует 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/Auth\+Manager.\+h\item 
+src/\mbox{\hyperlink{AuthManager_8cpp}{Auth\+Manager.\+cpp}}\end{DoxyCompactItemize}
