@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['server_5fsocket_0',['server_socket',['../classServer.html#a597fe0c56c29950a94d078d362fed51a',1,'Server']]]
+  ['running_0',['running',['../classServer.html#a4db32e1a16e0423cf619d7914fa9b8c2',1,'Server']]]
 ];

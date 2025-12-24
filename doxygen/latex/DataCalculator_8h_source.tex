@@ -14,18 +14,21 @@
 \DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{classDataCalculator_a06e07fb1d5f22a86af06d440808b1fc0}{MAX\_REASONABLE\_VECTORS}}\ =\ 1000;\ \ \ \ \ \ }
 \DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{classDataCalculator_a15cbecc78452ef13c3f4215677d091b6}{MAX\_REASONABLE\_VECTOR\_SIZE}}\ =\ 1000000;\ }
 \DoxyCodeLine{00017\ \ \ \ \ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataCalculator_af1fb0fd0cf05b592fec09218c7a2d1f3}{read\_exact}}(\textcolor{keywordtype}{int}\ sock,\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
-\DoxyCodeLine{00026\ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataCalculator_a0bdc33d636f03d051042b44e9ea50015}{send\_exact}}(\textcolor{keywordtype}{int}\ sock,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
-\DoxyCodeLine{00034\ \ \ \ \ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataCalculator_a25b9d42f72b21c2325d078521e04cc6e}{process\_client\_data}}(\textcolor{keywordtype}{int}\ client\_sock,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{classLogger}{Logger}}\&\ logger,\ \textcolor{keyword}{const}\ std::string\&\ client\_ip);}
-\DoxyCodeLine{00041\ \ \ \ \ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataCalculator_a3ab95e52d0590b2f4fdf3854e04530e3}{calculate\_sum\_of\_squares}}(\textcolor{keyword}{const}\ std::vector<double>\&\ vec);}
-\DoxyCodeLine{00047\ \ \ \ \ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataCalculator_aadf80fea739a5e2bdce61d5c37e58c13}{handle\_overflow}}(\textcolor{keywordtype}{double}\ value);}
-\DoxyCodeLine{00053\ \};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATACALCULATOR\_H}}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDataCalculator_ae31ff1892e90c453fe84f6aab622f50f}{DATA\_PROCESSING\_TIMEOUT\_SEC}}\ =\ 1;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataCalculator_af1fb0fd0cf05b592fec09218c7a2d1f3}{read\_exact}}(\textcolor{keywordtype}{int}\ sock,\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataCalculator_a0bdc33d636f03d051042b44e9ea50015}{send\_exact}}(\textcolor{keywordtype}{int}\ sock,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataCalculator_a25b9d42f72b21c2325d078521e04cc6e}{process\_client\_data}}(\textcolor{keywordtype}{int}\ client\_sock,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{classLogger}{Logger}}\&\ logger,\ \textcolor{keyword}{const}\ std::string\&\ client\_ip);}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataCalculator_a3ab95e52d0590b2f4fdf3854e04530e3}{calculate\_sum\_of\_squares}}(\textcolor{keyword}{const}\ std::vector<double>\&\ vec);}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataCalculator_aadf80fea739a5e2bdce61d5c37e58c13}{handle\_overflow}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATACALCULATOR\_H}}
 
 \end{DoxyCode}

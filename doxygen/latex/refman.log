@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.17)  22 DEC 2025 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.12.17)  24 DEC 2025 05:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1318,57 +1318,54 @@ Underfull \hbox (badness 10000) detected at line 131
  []
 
 ) (./classDataCalculator.tex
-Underfull \hbox (badness 10000) detected at line 39
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 42
-[][][]
- []
-
-
 Underfull \hbox (badness 10000) detected at line 45
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 48
 [][][]
  []
 
 
 
 [15]
-Underfull \hbox (badness 10000) detected at line 66
+Underfull \hbox (badness 10000) detected at line 51
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 89
+Underfull \hbox (badness 10000) detected at line 72
 [][][]
  []
 
 
 
 [16]
+Underfull \hbox (badness 10000) detected at line 95
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 122
+[][][]
+ []
+
+
 
 [17]
-Underfull \hbox (badness 10000) detected at line 116
+Underfull \hbox (badness 10000) detected at line 140
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 138
-[][][]
- []
-
-
-Overfull \vbox (2.57062pt too high) has occurred while \output is active []
-
-
-
-[18]
-Underfull \hbox (badness 10000) detected at line 165
+Underfull \hbox (badness 10000) detected at line 167
 [][][]
  []
 
 ) (./classErrorHandler.tex
+
+[18]
 Underfull \hbox (badness 1867) in paragraph at lines 29--30
 []\T2A/phv/m/it/10 void [] (const std[]::string &error[]_[]type, const std[]::s
 tring &message, bool is[]_[]
@@ -1380,8 +1377,6 @@ Underfull \hbox (badness 10000) detected at line 42
  []
 
 
-
-[19]
 Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
@@ -1392,11 +1387,13 @@ Underfull \hbox (badness 10000) detected at line 48
  []
 
 
-Overfull \vbox (1.64806pt too high) has occurred while \output is active []
 
-
+[19]
 
 [20]
+Overfull \vbox (23.39723pt too high) has occurred while \output is active []
+
+
 
 [21]) (./classLogger.tex
 
@@ -1423,19 +1420,16 @@ Underfull \hbox (badness 10000) detected at line 93
  []
 
 
-Overfull \vbox (14.06282pt too high) has occurred while \output is active []
 
-
-
-[24]
-
-[25]) (./classServer.tex <./classServer__coll__graph.pdf>
-<classServer__coll__graph.pdf, id=862, 195.73125pt x 165.61874pt>
+[24]) (./classServer.tex <./classServer__coll__graph.pdf>
+<classServer__coll__graph.pdf, id=856, 195.73125pt x 165.61874pt>
 File: classServer__coll__graph.pdf Graphic file (type pdf)
 <use classServer__coll__graph.pdf>
 Package pdftex.def Info: classServer__coll__graph.pdf  used on input line 19.
 (pdftex.def)             Requested size: 195.0pt x 165.00928pt.
 
+
+[25]
 
 [26]
 Underfull \hbox (badness 10000) detected at line 78
@@ -1482,13 +1476,13 @@ Underfull \hbox (badness 10000) detected at line 205
  []
 
 ) (./classServerInterface.tex
-
-[29]
 Underfull \hbox (badness 10000) detected at line 22
 [][][]
  []
 
 
+
+[29]
 Underfull \hbox (badness 10000) detected at line 25
 [][][]
  []
@@ -1503,18 +1497,12 @@ Underfull \hbox (badness 10000) detected at line 51
 [][][]
  []
 
+)
 
-
-[30])
-
-[31]
-
-[32
-
-]
+[30]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 6.
 (./AuthManager_8cpp.tex <./AuthManager_8cpp__incl.pdf>
-<AuthManager_8cpp__incl.pdf, id=946, 1062.97125pt x 209.78375pt>
+<AuthManager_8cpp__incl.pdf, id=939, 1062.97125pt x 209.78375pt>
 File: AuthManager_8cpp__incl.pdf Graphic file (type pdf)
 <use AuthManager_8cpp__incl.pdf>
 Package pdftex.def Info: AuthManager_8cpp__incl.pdf  used on input line 20.
@@ -1536,8 +1524,10 @@ Underfull \hbox (badness 10000) detected at line 34
 
 ) (./AuthManager_8h_source.tex
 
-[33]) (./CommandLineParser_8cpp.tex <./CommandLineParser_8cpp__incl.pdf>
-<CommandLineParser_8cpp__incl.pdf, id=982, 546.04pt x 209.78375pt>
+[31
+
+]) (./CommandLineParser_8cpp.tex <./CommandLineParser_8cpp__incl.pdf>
+<CommandLineParser_8cpp__incl.pdf, id=976, 546.04pt x 209.78375pt>
 File: CommandLineParser_8cpp__incl.pdf Graphic file (type pdf)
 <use CommandLineParser_8cpp__incl.pdf>
 Package pdftex.def Info: CommandLineParser_8cpp__incl.pdf  used on input line 1
@@ -1545,7 +1535,7 @@ Package pdftex.def Info: CommandLineParser_8cpp__incl.pdf  used on input line 1
 (pdftex.def)             Requested size: 350.0pt x 134.46599pt.
 
 
-[34]
+[32]
 Underfull \hbox (badness 10000) detected at line 26
 [][][]
  []
@@ -1562,14 +1552,14 @@ Underfull \hbox (badness 10000) detected at line 32
 
 ) (./CommandLineParser_8h_source.tex) (./DataCalculator_8cpp.tex <./DataCalcula
 tor_8cpp__incl.pdf>
-<DataCalculator_8cpp__incl.pdf, id=1018, 999.735pt x 209.78375pt>
+<DataCalculator_8cpp__incl.pdf, id=1012, 999.735pt x 209.78375pt>
 File: DataCalculator_8cpp__incl.pdf Graphic file (type pdf)
 <use DataCalculator_8cpp__incl.pdf>
 Package pdftex.def Info: DataCalculator_8cpp__incl.pdf  used on input line 25.
 (pdftex.def)             Requested size: 350.0pt x 73.44461pt.
 
 
-[35]
+[33]
 Underfull \hbox (badness 10000) detected at line 33
 [][][]
  []
@@ -1586,14 +1576,14 @@ Underfull \hbox (badness 10000) detected at line 39
 
 ) (./DataCalculator_8h_source.tex) (./ErrorHandler_8cpp.tex <./ErrorHandler_8cp
 p__incl.pdf>
-<ErrorHandler_8cpp__incl.pdf, id=1042, 600.2425pt x 209.78375pt>
+<ErrorHandler_8cpp__incl.pdf, id=1037, 600.2425pt x 209.78375pt>
 File: ErrorHandler_8cpp__incl.pdf Graphic file (type pdf)
 <use ErrorHandler_8cpp__incl.pdf>
 Package pdftex.def Info: ErrorHandler_8cpp__incl.pdf  used on input line 19.
 (pdftex.def)             Requested size: 350.0pt x 122.32765pt.
 
 
-[36]
+[34]
 Underfull \hbox (badness 10000) detected at line 27
 [][][]
  []
@@ -1610,8 +1600,8 @@ Underfull \hbox (badness 10000) detected at line 33
 
 ) (./ErrorHandler_8h_source.tex
 
-[37]) (./Logger_8cpp.tex <./Logger_8cpp__incl.pdf>
-<Logger_8cpp__incl.pdf, id=1076, 374.39874pt x 209.78375pt>
+[35]) (./Logger_8cpp.tex <./Logger_8cpp__incl.pdf>
+<Logger_8cpp__incl.pdf, id=1070, 374.39874pt x 209.78375pt>
 File: Logger_8cpp__incl.pdf Graphic file (type pdf)
 <use Logger_8cpp__incl.pdf>
 Package pdftex.def Info: Logger_8cpp__incl.pdf  used on input line 17.
@@ -1628,20 +1618,20 @@ Underfull \hbox (badness 10000) detected at line 28
 
 
 
-[38]
+[36]
 Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
 
 ) (./Logger_8h_source.tex) (./Server_8cpp.tex <./Server_8cpp__incl.pdf>
-<Server_8cpp__incl.pdf, id=1103, 1697.34125pt x 264.99pt>
+<Server_8cpp__incl.pdf, id=1097, 1697.34125pt x 264.99pt>
 File: Server_8cpp__incl.pdf Graphic file (type pdf)
 <use Server_8cpp__incl.pdf>
 Package pdftex.def Info: Server_8cpp__incl.pdf  used on input line 23.
 (pdftex.def)             Requested size: 350.0pt x 54.64273pt.
 
 
-[39]
+[37]
 Underfull \hbox (badness 10000) detected at line 31
 [][][]
  []
@@ -1658,7 +1648,7 @@ Underfull \hbox (badness 10000) detected at line 37
 
 ) (./Server_8h_source.tex) (./ServerInterface_8cpp.tex <./ServerInterface_8cpp_
 _incl.pdf>
-<ServerInterface_8cpp__incl.pdf, id=1149, 1356.06625pt x 264.99pt>
+<ServerInterface_8cpp__incl.pdf, id=1144, 1356.06625pt x 264.99pt>
 File: ServerInterface_8cpp__incl.pdf Graphic file (type pdf)
 <use ServerInterface_8cpp__incl.pdf>
 Package pdftex.def Info: ServerInterface_8cpp__incl.pdf  used on input line 21.
@@ -1666,7 +1656,7 @@ Package pdftex.def Info: ServerInterface_8cpp__incl.pdf  used on input line 21.
 (pdftex.def)             Requested size: 350.0pt x 68.39034pt.
 
 
-[40]
+[38]
 Underfull \hbox (badness 10000) detected at line 29
 [][][]
  []
@@ -1683,15 +1673,15 @@ Underfull \hbox (badness 10000) detected at line 35
 
 ) (./ServerInterface_8h_source.tex)
 
-[41]
+[39]
 
-[42
+[40
 
 ] (./refman.ind
 
 
 
-[43
+[41
 
 
 ]
@@ -1705,7 +1695,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.51453pt}.
 
-[44
+[42
 
 ]) (./refman.aux)
  ***********
@@ -1717,16 +1707,16 @@ L3 programming layer <2025-01-18>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 70E25DD347D7FB3357819EE44A984DFB;19010.
+(rerunfilecheck)             Checksum: 876D0A2F5D9BC869E25F4828848505BC;19010.
  ) 
 Here is how much of TeX's memory you used:
- 20884 strings out of 474652
- 340452 string characters out of 5758084
- 768138 words of memory out of 5000000
- 43202 multiletter control sequences out of 15000+600000
+ 20885 strings out of 474652
+ 340557 string characters out of 5758084
+ 768218 words of memory out of 5000000
+ 43203 multiletter control sequences out of 15000+600000
  578124 words of font info for 77 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 101i,16n,117p,522b,767s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,16n,117p,522b,768s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/osetrov/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm0800.600
 pk> </home/osetrov/.texlive2025/texmf-var/fonts/pk/ljfour/jknappen/ec/tcsi0900.
 600pk> </home/osetrov/.texlive2025/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm0900
@@ -1743,10 +1733,10 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on refman.pdf (50 pages, 363398 bytes).
+Output written on refman.pdf (48 pages, 364276 bytes).
 PDF statistics:
- 1918 PDF objects out of 2073 (max. 8388607)
- 1305 compressed objects within 14 object streams
+ 1915 PDF objects out of 2073 (max. 8388607)
+ 1301 compressed objects within 14 object streams
  302 named destinations out of 1000 (max. 500000)
  833 words of extra memory for PDF output out of 10000 (max. 10000000)
 

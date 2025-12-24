@@ -13,7 +13,7 @@
 \begin{DoxyCompactItemize}
 \item 
 static bool \mbox{\hyperlink{classDataCalculator_af1fb0fd0cf05b592fec09218c7a2d1f3}{read\+\_\+exact}} (int sock, void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
-\begin{DoxyCompactList}\small\item\em Прочитать точное количество байт из сокета \end{DoxyCompactList}\item 
+\item 
 static bool \mbox{\hyperlink{classDataCalculator_a0bdc33d636f03d051042b44e9ea50015}{send\+\_\+exact}} (int sock, const void \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
 \begin{DoxyCompactList}\small\item\em Отправить точное количество байт в сокет \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{classDataCalculator_a25b9d42f72b21c2325d078521e04cc6e}{process\+\_\+client\+\_\+data}} (int client\+\_\+sock, class \mbox{\hyperlink{classLogger}{Logger}} \&logger, const std\+::string \&client\+\_\+ip)
@@ -22,6 +22,12 @@ static double \mbox{\hyperlink{classDataCalculator_a3ab95e52d0590b2f4fdf3854e045
 \begin{DoxyCompactList}\small\item\em Вычислить сумму квадратов вектора \end{DoxyCompactList}\item 
 static double \mbox{\hyperlink{classDataCalculator_aadf80fea739a5e2bdce61d5c37e58c13}{handle\+\_\+overflow}} (double value)
 \begin{DoxyCompactList}\small\item\em Обработать переполнение значения \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Статические открытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDataCalculator_ae31ff1892e90c453fe84f6aab622f50f}\label{classDataCalculator_ae31ff1892e90c453fe84f6aab622f50f} 
+static constexpr int {\bfseries DATA\+\_\+\+PROCESSING\+\_\+\+TIMEOUT\+\_\+\+SEC} = 1
+\begin{DoxyCompactList}\small\item\em Таймаут обработки данных в секундах \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые статические данные}
 \begin{DoxyCompactItemize}
 \item 
@@ -121,10 +127,6 @@ true если обработка успешна, false при ошибке
 \index{read\_exact@{read\_exact}!DataCalculator@{DataCalculator}}
 \doxysubsubsection{\texorpdfstring{read\_exact()}{read\_exact()}}
 {\footnotesize\ttfamily bool Data\+Calculator\+::read\+\_\+exact (\begin{DoxyParamCaption}\item[{int}]{sock,  }\item[{void \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Прочитать точное количество байт из сокета 
 
 
 \begin{DoxyParams}[1]{Аргументы}
