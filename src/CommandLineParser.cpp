@@ -21,6 +21,8 @@ CommandLineParser::CommandLineParser()
       log_file("server.log") {}
 
 bool CommandLineParser::parse(int argc, char* argv[]) {
+    
+    
     try {
         po::options_description desc("Сервер обработки данных");
         desc.add_options()
@@ -41,7 +43,15 @@ bool CommandLineParser::parse(int argc, char* argv[]) {
             return false;
         }
         
-        // Валидация значений
+        if (argc == 1) {
+        std::cout << desc << std::endl;
+        std::cout << "Используются параметры по умолчанию:" << std::endl;
+        std::cout << "  Порт: 33333, users.txt, server.log" << std::endl;
+        std::cout << "Запуск через 3 секунды..." << std::endl;
+        sleep(3);  
+        return true;  
+        
+        }
         if (port <= 1023 || port > 65535) {
             throw std::runtime_error("Invalid port number: " + std::to_string(port));
         }
@@ -72,7 +82,6 @@ bool CommandLineParser::validate() const {
                                     fs::absolute(user_db_file).string());
         }
         
-        // Проверяем, можем ли мы создать/открыть лог-файл
         std::ofstream test_log(log_file, std::ios::app);
         if (!test_log) {
             throw std::runtime_error("Не могу открыть лог-файл для записи: " + 

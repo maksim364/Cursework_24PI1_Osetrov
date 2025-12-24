@@ -15,8 +15,10 @@ private:
     static constexpr uint32_t MAX_REASONABLE_VECTORS = 1000;      //!< Максимальное разумное количество векторов
     static constexpr uint32_t MAX_REASONABLE_VECTOR_SIZE = 1000000; //!< Максимальный разумный размер вектора
     
+    
 public:
-    //! \brief Прочитать точное количество байт из сокета
+    static constexpr int DATA_PROCESSING_TIMEOUT_SEC = 1; //!< Таймаут обработки данных в секундах
+
     //! \param[in] sock Сокет для чтения
     //! \param[out] buffer Буфер для данных
     //! \param[in] size Количество байт для чтения

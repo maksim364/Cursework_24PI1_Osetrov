@@ -22,42 +22,79 @@
 
 bool DataCalculator::read_exact(int sock, void* buffer, size_t size) {
     try {
+        struct timeval timeout;
+        timeout.tv_sec = DATA_PROCESSING_TIMEOUT_SEC;
+        timeout.tv_usec = 0;
+        
+        fd_set read_fds;
         char* ptr = static_cast<char*>(buffer);
         size_t total = 0;
         
         while (total < size) {
+            FD_ZERO(&read_fds);
+            FD_SET(sock, &read_fds);
+            
+            int select_result = select(sock + 1, &read_fds, nullptr, nullptr, &timeout);
+            
+            if (select_result == -1) {
+                throw std::runtime_error("select() failed: " + std::string(strerror(errno)));
+            } else if (select_result == 0) {
+                throw std::runtime_error("Data reading timeout (possible type mismatch: client sends int32_t instead of double)");
+            }
+            
             ssize_t n = recv(sock, ptr + total, size - total, 0);
             if (n <= 0) {
                 if (n == 0) {
                     throw std::runtime_error("Connection closed by client during read");
                 } else {
-                    throw std::runtime_error("recv failed with error code");
+                    throw std::runtime_error("recv failed: " + std::string(strerror(errno)));
                 }
             }
             total += n;
+            
+            timeout.tv_sec = DATA_PROCESSING_TIMEOUT_SEC;
+            timeout.tv_usec = 0;
         }
         return true;
     } catch (const std::exception& e) {
-        // Пробрасываем исключение выше для централизованной обработки
         throw;
     }
 }
 
 bool DataCalculator::send_exact(int sock, const void* buffer, size_t size) {
     try {
+        struct timeval timeout;
+        timeout.tv_sec = DATA_PROCESSING_TIMEOUT_SEC;
+        timeout.tv_usec = 0;
+        
+        fd_set write_fds;
         const char* ptr = static_cast<const char*>(buffer);
         size_t total = 0;
         
         while (total < size) {
+            FD_ZERO(&write_fds);
+            FD_SET(sock, &write_fds);
+            
+            int select_result = select(sock + 1, nullptr, &write_fds, nullptr, &timeout);
+            
+            if (select_result == -1) {
+                throw std::runtime_error("select() failed for send: " + std::string(strerror(errno)));
+            } else if (select_result == 0) {
+                throw std::runtime_error("Data sending timeout (client not reading)");
+            }
+            
             ssize_t n = send(sock, ptr + total, size - total, 0);
             if (n <= 0) {
                 if (n == 0) {
                     throw std::runtime_error("Connection closed by client during send");
                 } else {
-                    throw std::runtime_error("send failed with error code");
+                    throw std::runtime_error("send failed: " + std::string(strerror(errno)));
                 }
             }
             total += n;
+            
+            timeout.tv_sec = DATA_PROCESSING_TIMEOUT_SEC;
+            timeout.tv_usec = 0;
         }
         return true;
     } catch (const std::exception& e) {
@@ -69,7 +106,6 @@ double DataCalculator::calculate_sum_of_squares(const std::vector<double>& vec) 
     try {
         double sum = 0.0;
         for (double val : vec) {
-            // Проверка на переполнение
             if (val != 0.0 && std::abs(val) > std::numeric_limits<double>::max() / std::abs(val)) {
                 throw std::overflow_error("Potential overflow in value squaring");
             }
@@ -99,6 +135,7 @@ double DataCalculator::handle_overflow(double value) {
     if (value < min_value) return min_value;
     return value;
 }
+
 
 bool DataCalculator::process_client_data(int client_sock, Logger& logger, const std::string& client_ip) {
     try {
@@ -189,7 +226,17 @@ bool DataCalculator::process_client_data(int client_sock, Logger& logger, const 
         return true;
         
     } catch (const std::exception& e) {
-        logger.log_error("Error processing data from " + client_ip + ": " + e.what());
+        std::string error_msg = e.what();
+        
+        // Проверяем, это ли наш таймаут по несовместимости типов
+        if (error_msg.find("possible type mismatch") != std::string::npos ||
+            error_msg.find("client sends int32_t") != std::string::npos) {
+            logger.log_error("Type mismatch detected from " + client_ip + 
+                            ": client sends not double");
+        }
+        
+        logger.log_error("Error processing data from " + client_ip + ": " + error_msg);
         return false;
     }
 }
+

@@ -95,6 +95,18 @@ bool Server::handle_client(int client_sock) {
     std::string client_ip = "unknown";
     
     try {
+        struct timeval timeout;
+        timeout.tv_sec = DataCalculator::DATA_PROCESSING_TIMEOUT_SEC;
+        timeout.tv_usec = 0;
+        
+        if (setsockopt(client_sock, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0) {
+            logger->log_error("Failed to set receive timeout for client");
+        }
+        
+        if (setsockopt(client_sock, SOL_SOCKET, SO_SNDTIMEO, &timeout, sizeof(timeout)) < 0) {
+            logger->log_error("Failed to set send timeout for client");
+        }
+        
         client_ip = get_client_ip(client_sock);
         logger->log_connection(client_ip, true);
         
